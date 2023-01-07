@@ -3,13 +3,14 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
-const app=express();
-const port = process.env.PORT;
+const app = express();
+const port = process.env.PORT || 5000;
 
 //MIDDLEWARE    
 app.use(cors());
 //allows to parse json
 app.use(express.json());
+
 //PUT CONTROLLERS HERE
 
 //where db is stored
@@ -20,6 +21,9 @@ const connection = mongoose.connection;
 connection.once('open', () => {
     console.log('MongoDB db connection established.')
 })
+
+//CONTROLLERS
+app.use('/sightings', require('./routes/sighting_routes'))
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);

@@ -18,9 +18,13 @@ const sightingSchema = new Schema({
         type: String,
         required:true
     },
+    species:{
+        type: String,
+        required: true
+    },
     images:{
-        type:Array,
-        default:[]
+        type:String,
+        default:''
     },
     description:{
         type:String,
