@@ -19,8 +19,8 @@ const sightingSchema = new Schema({
         required:true
     },
     images:{
-        type:String,
-        default:''
+        type:Array,
+        default:[]
     },
     description:{
         type:String,
