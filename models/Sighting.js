@@ -24,7 +24,7 @@ const sightingSchema = new Schema({
     },
     description:{
         type:String,
-        retuired:true
+        required:true
     }
 },{
     //so we know when things were created or modified 
