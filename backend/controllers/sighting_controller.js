@@ -6,22 +6,9 @@ let Sighting = require('../models/Sighting');
 const getSightings = asyncHandler(async (req, res) => {
     //get goals through our mongoDB returns all of the goals
     const allSightings = await Sighting.find()
+    
     res.status(200).json(allSightings)
 })
-
-//find all sightings
-// const getSightings = asyncHandler(async (req, res) => {
-//     //get goals through our mongoDB returns all of the goals
-//     const allSightings = await Sighting.find()
-//     if (allSightings) {
-//         res.status(200).json(goals)
-//     }
-//     else {
-//         res.status(400)
-//         throw new Error('List not found')
-//     }
-// })
-
 
 //create a sighting
 // const createSighting = asyncHandler(async (req, res) => {
