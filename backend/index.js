@@ -11,8 +11,6 @@ app.use(cors());
 //allows to parse json
 app.use(express.json());
 
-//PUT CONTROLLERS HERE
-
 //where db is stored
 const uri = process.env.MONGO_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });

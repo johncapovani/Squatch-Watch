@@ -6,6 +6,7 @@ const sightingSchema = new Schema({
         type: String,
         required:true
     },
+    // dates are in year-month-day format, ie "2022-01-23"
     date:{
         type: Date,
         required: true
