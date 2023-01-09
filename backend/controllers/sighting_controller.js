@@ -3,25 +3,21 @@ const asyncHandler = require('express-async-handler')
 let Sighting = require('../models/Sighting');
 const User = require('../models/userModel')
 
-//find all sightings
-const getSightings = asyncHandler(async (req, res) => {
-    //get goals through our mongoDB returns all of the goals
-    const allSightings = await Sighting.find()
 
-    res.status(200).json(allSightings)
-})
 
-//create a sighting
+//CREATE a sighting
+//POST
+//Access Level Public
 const createSighting = asyncHandler(async (req, res) => {
 
     const newSighting = await Sighting.create({
-        user: req.body.user,
         date: Date.parse(req.body.date),
         time: req.body.time,
         location: req.body.location,
         species: req.body.species,
         images: req.body.images,
-        description: req.body.description
+        description: req.body.description,
+        user: req.user.id
     })
     if (newSighting) {
         res.status(200).json(newSighting)
@@ -32,15 +28,21 @@ const createSighting = asyncHandler(async (req, res) => {
     }
 })
 
-//delete one
-const deleteSighting = asyncHandler(async (req, res) => {
-    const deletedSighting = await Sighting.findByIdAndDelete(req.params.id)
-    res.status(200).json(`${deletedSighting} successfully deleted!`)
-});
 
-//@desc Update Sighting
-//@route PUT /sightings/id
-//@access Private
+
+//READ all sightings
+//GET
+//Access Level Private
+const getSightings = asyncHandler(async (req, res) => {
+    //get sightings through our mongoDB returns all of the sightings
+    const allSightings = await Sighting.find({ user: req.user.id })
+
+    res.status(200).json(allSightings)
+})
+
+//UPDATE Sighting
+//PUT
+//Access Level Private
 const updateSighting = asyncHandler(async (req, res) => {
 
     const sighting = await Sighting.findById(req.params.id)
@@ -62,7 +64,7 @@ const updateSighting = asyncHandler(async (req, res) => {
         throw new Error('User not authorized')
     }
 
-    //New set to true will tell mongoose to create it if the goal does not exist
+    //New set to true will tell mongoose to create it if the sighting does not exist
     const updatedSighting = await Sighting.findByIdAndUpdate(req.params.id, req.
         body, {
         new: true,
@@ -70,6 +72,38 @@ const updateSighting = asyncHandler(async (req, res) => {
 
     res.status(200).json(updatedSighting)
 })
+
+
+//DELETE Sighting 
+//DELETE
+//Access Level Private
+const deleteSighting = asyncHandler(async (req, res) => {
+
+    const sighting = await Sighting.findById(req.params.id)
+
+    if (!sighting) {
+        res.status(400)
+        throw new Error('Sighting does not exist')
+    }
+    //get the user
+    const user = await User.findById(req.user.id)
+    //Check for  user
+    if (!user) {
+        res.status(401)
+        throw new Error('User not found')
+    }
+    //Make sure user matches the record that is trying to be deleted
+    if (sighting.user.toString() !== user.id) {
+        res.status(401)
+        throw new Error('User not authorized')
+    }
+
+
+    const deletedSighting = await Sighting.findByIdAndDelete(req.params.id, req.body)
+
+    res.status(200).json(`This object document has been deleted succesfully ${deletedSighting}!`)
+})
+
 
 
 module.exports = {
