@@ -6,6 +6,7 @@ const sightingSchema = new Schema({
         type: String,
         required:true
     },
+    // dates are in year-month-day format, ie "2022-01-23"
     date:{
         type: Date,
         required: true
@@ -17,6 +18,10 @@ const sightingSchema = new Schema({
     location:{
         type: String,
         required:true
+    },
+    species:{
+        type: String,
+        required: true
     },
     images:{
         type:String,
