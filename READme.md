@@ -14,6 +14,7 @@ The Squatch Watch app allows its patrons to share picture and stories of their c
 2. Express (and async handler)
 3. React
 4. Node.js
+5. JSON Webtoken Validation for User Authentication
 
 ## Features
 The initial web app is a very basic blog app. Patrons will be able to:
@@ -30,3 +31,5 @@ However, there is a lot of room for scalability:
 ## What we learned
 
 ## Citations and Resources
+Referenced Traversy Media for JWTToken, Protected Routes, etc.
+Traversy Media https://www.youtube.com/watch?v=-0exw-9YJBo&t=821s
