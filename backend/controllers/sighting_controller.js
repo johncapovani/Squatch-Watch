@@ -40,6 +40,16 @@ const getSightings = asyncHandler(async (req, res) => {
     res.status(200).json(allSightings)
 })
 
+//READ ONE sighting
+//GET
+//not sure how to put the auth requirements in here
+const getOneSighting =  asyncHandler(async (req,res) => {
+    //get one sighting from mongodb, returns one sighting by ID
+    const oneSighting = await Sighting.findById(req.params.id)
+
+    res.status(200).json(oneSighting)
+})
+
 //UPDATE Sighting
 //PUT
 //Access Level Private
@@ -107,5 +117,5 @@ const deleteSighting = asyncHandler(async (req, res) => {
 
 
 module.exports = {
-    getSightings, createSighting, deleteSighting, updateSighting
+    getSightings, createSighting, deleteSighting, updateSighting, getOneSighting
 }
