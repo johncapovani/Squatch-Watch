@@ -9,6 +9,7 @@ import Register from './pages/Register';
 import User_Profile from './pages/User_Profile'
 import Create_Update_Sighting from './pages/Create_Update_Sighting'
 import Home from './pages/Home';
+// import Content from './components/Content';
 
 function App() {
   return (

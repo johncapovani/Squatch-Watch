@@ -1,0 +1,33 @@
+* {
+    background-color: grey;
+    border: 1px solid blue;
+    padding: 10px;
+    
+}
+
+.container {
+    padding: 15px;
+    background-color: brown;
+}
+
+.header {
+    height: 25em;
+    padding: 2em;
+    
+}
+
+.list {
+    display: flex;
+    list-style-type: none;
+    flex-wrap: nowrap;
+    padding: 14px 0px 14px 0px;
+    margin: auto;
+    /* background-color: beige; */
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em 4em 0em 4em;
+}
