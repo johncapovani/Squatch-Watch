@@ -7,7 +7,7 @@ function Navbar() {
       <div className='logo'>
         <Link to='/'>Home</Link>
       </div>
-      <ul>
+      <ul className='list'>
         <li>
           <Link to='/report'>
             Report a Sighting
