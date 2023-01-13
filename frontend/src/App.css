@@ -1,8 +1,8 @@
-* {
+/* * :not(.reportSightingContainer, .reportSightingItem ){
     background-color: grey;
     border: 1px solid blue;
     padding: 10px;
-}
+} */
 
 .container {
     padding: 15px;
@@ -10,7 +10,7 @@
 }
 
 .header {
-    height: 25em;
+    height: 10VH;
     padding: 2em;
 }
 
