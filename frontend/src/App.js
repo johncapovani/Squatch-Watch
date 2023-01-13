@@ -9,6 +9,7 @@ import Register from './pages/Register';
 import User_Profile from './pages/User_Profile'
 import Create_Update_Sighting from './pages/Create_Update_Sighting'
 import Home from './pages/Home';
+import Datacard from './components/Datacard'
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/account' element={<User_Profile />} />
           <Route path='/report' element={<Create_Update_Sighting />} />
+          {/* For testing */}
+          <Route path='/onesighting' element={<Datacard />} />
 
         </Routes>
         <Footer />
