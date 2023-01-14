@@ -1,6 +1,6 @@
 const asyncHandler = require('express-async-handler')
 //mongoose model
-let Sighting = require('../models/Sighting');
+let Sighting = require('../models/sightingModel');
 const User = require('../models/userModel')
 
 
