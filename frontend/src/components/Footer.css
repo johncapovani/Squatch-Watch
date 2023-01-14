@@ -1,6 +1,25 @@
+.footer{
+    padding:5px
+}
+
 .footer-text{
     z-index: 1;
     position: absolute;
+    width:100%;
+}
+
+.copyright{
+    font-size: 16px;
+    text-align: center;
+    color:rgb(240, 255, 245);
+}
+
+.icons{
+    text-align: right;
+    color:#F17A2A;
+    padding-right: 60px;
+    font-size: 22px;
+    margin: 55px 0px 10px 0px;
 }
 
 .scrolling-image-container{
