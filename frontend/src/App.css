@@ -100,6 +100,7 @@
 }
 
 .nav {
+    display: flex;
     /* border: 2px solid blue; */
     background-color: #99917f;
     text-decoration: none;
@@ -133,6 +134,13 @@
     padding: 15px 40px 15px 40px;
     font-weight: bold;
     color: #751922a2;
+}
+/* Styling for logout button */
+.b1 {
+
+   padding: 18px 45px 15px 45px;
+   float: right;
+
 }
 
 .nav:focus {
