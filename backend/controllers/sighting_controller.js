@@ -1,6 +1,6 @@
 const asyncHandler = require('express-async-handler')
 //mongoose model
-let Sighting = require('../models/Sighting');
+let Sighting = require('../models/sightingModel');
 const User = require('../models/userModel')
 
 
@@ -38,6 +38,16 @@ const getSightings = asyncHandler(async (req, res) => {
     const allSightings = await Sighting.find({ user: req.user.id })
 
     res.status(200).json(allSightings)
+})
+
+//READ ONE sighting
+//GET
+//not sure how to put the auth requirements in here
+const getOneSighting =  asyncHandler(async (req,res) => {
+    //get one sighting from mongodb, returns one sighting by ID
+    const oneSighting = await Sighting.findById(req.params.id)
+
+    res.status(200).json(oneSighting)
 })
 
 //UPDATE Sighting
@@ -107,5 +117,5 @@ const deleteSighting = asyncHandler(async (req, res) => {
 
 
 module.exports = {
-    getSightings, createSighting, deleteSighting, updateSighting
+    getSightings, createSighting, deleteSighting, updateSighting, getOneSighting
 }

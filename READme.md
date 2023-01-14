@@ -1,5 +1,15 @@
 # Squatch Watch
 
+## color scheme
+main background: #122723
+file background: #BAB3A3
+dormant tabs: #99917F
+text color: #271214
+footer orange: #F17A2A
+arrows and submit button: #16302B
+light text space: #EDE9E1
+text placeholder: #7B7465
+
 ## Contributors
 John Capovani (johncapovani)
 Victoria Beasley (iesnoth)

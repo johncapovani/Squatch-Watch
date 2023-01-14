@@ -1,12 +1,13 @@
-import React from 'react';
+// import {useDispatch} from 'react-redux';
 
-const Datacard = () => {
+const Datacard = ({sighting}) => {
+    // const dispatch = useDispatch()
     return(
-        <div>
-            <p>
-                Datacard
-            </p>
+        <>
+        <div className="goal">
+            <h2>{sighting.time}</h2>
         </div>
+        </>
     )
 }
 

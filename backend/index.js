@@ -26,7 +26,7 @@ connection.once('open', () => {
 })
 
 //CONTROLLERS
-app.use('/sightings', require('./routes/sighting_routes'))
+app.use('/api/sightings', require('./routes/sighting_routes'))
 app.use('/api/users', require('./routes/user_routes'))
 
 //Set the app to use our errorHandler
