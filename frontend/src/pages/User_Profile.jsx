@@ -2,7 +2,7 @@ import React from 'react'
 
 function User_Profile() {
   return (
-    <div>Your Account Details:</div>
+    <div className='account'>Your Account Details:</div>
   )
 }
 
