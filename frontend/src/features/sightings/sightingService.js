@@ -9,7 +9,7 @@ const getSightings = async () => {
     return response.data
 }
 
-const goalService = {
+const sightingService = {
     getSightings
 }
 

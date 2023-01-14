@@ -12,11 +12,9 @@ const User = require('../models/userModel')
 //@access Public
 const registerUser = asyncHandler(async (req, res) => {
     //destructure body data
-
     const { name, email, password } = req.body
 
     if (!name || !email || !password) {
-
         res.status(400)
         throw new Error('Please add all required fields')
     }
@@ -83,16 +81,8 @@ const loginUser = asyncHandler(async (req, res) => {
 //@route GET /api/users/me
 //@access Private protected route
 const getMe = asyncHandler(async (req, res) => {
-    //destructure the id
-    const { _id, name, email } = await User.findById(req.user.id)
-
-    res.status(200).json({
-
-        id: _id,
-        name,
-        email,
-
-    })
+    //got user in the middleware
+    res.status(200).json(req.user)
 })
 
 
@@ -100,7 +90,7 @@ const getMe = asyncHandler(async (req, res) => {
 const generateToken = (id) => {
 
     return jwt.sign({ id }, process.env.JWT_SECRET, {
-        expiresIn: '1d',
+        expiresIn: '30d',
     })
 }
 
