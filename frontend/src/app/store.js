@@ -6,7 +6,7 @@ import sightingsReducer from '../features/sightings/sightingSlice'
 export const store = configureStore({
 
     reducer: {
-
+        sightings: sightingReducer,
         auth: authReducer,
         sightings: sightingsReducer
 

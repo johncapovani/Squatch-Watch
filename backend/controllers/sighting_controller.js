@@ -6,7 +6,7 @@ const User = require('../models/userModel')
 
 
 //CREATE a sighting
-//POST
+//POST /api/sightings/
 //Access Level Public
 const createSighting = asyncHandler(async (req, res) => {
 
@@ -19,31 +19,30 @@ const createSighting = asyncHandler(async (req, res) => {
         description: req.body.description,
         user: req.user.id
     })
-    if (newSighting) {
-        res.status(200).json(newSighting)
-    }
-    else {
+    if (!newSighting) {
         res.status(400)
-        throw new Error('Sighting not created.')
+        throw new Error('Please fill in required fields.')
     }
+    res.status(200).json(newSighting)
+
 })
 
 
 
 //READ all sightings
-//GET
-//Access Level Private
+//GET /api/sightings/
+//Access Level Public
 const getSightings = asyncHandler(async (req, res) => {
     //get sightings through our mongoDB returns all of the sightings
-    const allSightings = await Sighting.find({ user: req.user.id })
+    const allSightings = await Sighting.find()
 
     res.status(200).json(allSightings)
 })
 
+//need this?
 //READ ONE sighting
-//GET
-//not sure how to put the auth requirements in here
-const getOneSighting =  asyncHandler(async (req,res) => {
+//GET /api/sightings/:id
+const getOneSighting = asyncHandler(async (req, res) => {
     //get one sighting from mongodb, returns one sighting by ID
     const oneSighting = await Sighting.findById(req.params.id)
 
@@ -51,7 +50,7 @@ const getOneSighting =  asyncHandler(async (req,res) => {
 })
 
 //UPDATE Sighting
-//PUT
+//PUT /api/sightings/:id
 //Access Level Private
 const updateSighting = asyncHandler(async (req, res) => {
 
@@ -61,15 +60,14 @@ const updateSighting = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error('Sighting not found')
     }
-    //get the user
-    const user = await User.findById(req.user.id)
+
     //Check for  user
-    if (!user) {
+    if (!req.user) {
         res.status(401)
         throw new Error('User not found')
     }
-    //Make sure user matches the record that is trying to be deleted
-    if (sighting.user.toString() !== user.id) {
+    //Make sure user matches the record to be updated
+    if (sighting.user.toString() !== req.user.id) {
         res.status(401)
         throw new Error('User not authorized')
     }
@@ -85,7 +83,7 @@ const updateSighting = asyncHandler(async (req, res) => {
 
 
 //DELETE Sighting 
-//DELETE
+//DELETE /api/sightings/:id
 //Access Level Private
 const deleteSighting = asyncHandler(async (req, res) => {
 
@@ -95,23 +93,21 @@ const deleteSighting = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error('Sighting does not exist')
     }
-    //get the user
-    const user = await User.findById(req.user.id)
+
     //Check for  user
-    if (!user) {
+    if (!req.user) {
         res.status(401)
         throw new Error('User not found')
     }
     //Make sure user matches the record that is trying to be deleted
-    if (sighting.user.toString() !== user.id) {
+    if (sighting.user.toString() !== req.user.id) {
         res.status(401)
         throw new Error('User not authorized')
     }
 
 
-    const deletedSighting = await Sighting.findByIdAndDelete(req.params.id, req.body)
-
-    res.status(200).json(`This object document has been deleted succesfully ${deletedSighting}!`)
+    await sighting.remove()
+    res.status(200).json(`This object document has been deleted succesfully ${req.params.id}!`)
 })
 
 

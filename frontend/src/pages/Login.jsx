@@ -71,7 +71,7 @@ function Login() {
             <div className='form-group'>
               <input
                 type='email'
-                className='form-control'
+                className='lform-control'
                 id='email'
                 name='email'
                 value={email}
@@ -82,7 +82,7 @@ function Login() {
             <div className='form-group'>
               <input
                 type='password'
-                className='form-control'
+                className='lform-control'
                 id='password'
                 name='password'
                 value={password}
@@ -92,7 +92,7 @@ function Login() {
             </div>
 
             <div className='form-group'>
-              <button type='submit' className='btn btn-block'>
+              <button type='submit' className='btn btn-block lbtn'>
                 Submit
               </button>
             </div>
