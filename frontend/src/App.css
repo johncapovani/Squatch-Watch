@@ -79,6 +79,7 @@
 }
 
 .nav {
+    display: flex;
     /* border: 2px solid blue; */
     background-color: #99917f;
     text-decoration: none;
@@ -108,6 +109,13 @@
 .n4 {
     padding: 15px 40px 15px 40px;
     font-weight: bold;
+}
+/* Styling for logout button */
+.b1 {
+
+   padding: 18px 45px 15px 45px;
+   float: right;
+
 }
 
 .nav:focus {
