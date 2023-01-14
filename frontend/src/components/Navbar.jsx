@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FaSignInAlt, FaSignOutAlt, FaUser } from 'react-icons/fa'
+
 
 function Navbar() {
   return (
@@ -16,11 +18,13 @@ function Navbar() {
         <li>
           <Link className='nav n2' to='/login'>
             Login
+            <FaSignInAlt />
           </Link>
         </li>
         <li>
           <Link className='nav n3' to='/register'>
             Register
+            <FaUser />
           </Link>
         </li>
         <li>
