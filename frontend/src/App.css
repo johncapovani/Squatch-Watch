@@ -1,15 +1,16 @@
 /* * {
-    background-color: #122723;
-    color: #751922a2;
+   
 } */
 
+/* background color */
 .container {
     padding: 20px;
     background-color: #122723;
+    margin: 0px;
 }
 
+/* logo sizing */
 .logo {
-    /* background-image: url(https://dejpknyizje2n.cloudfront.net/svgcustom/clipart/preview/bigfoot-or-sasquatch-sighting-29688-300x300.png); */
     text-decoration: none;
     display: flex;
     justify-content: center;
@@ -19,17 +20,18 @@
     background-size: 100px;
 }
 
+
 .gallery {
     background-color: #bab3a3;
     height: 4vh;
 }
 
+/* page styling and managment */
 .home {
     background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
-    /* background-color:#bab3a3; */
     color: #751922a2;
     font-weight: bold;
-    height: 70vh;
+    height: 65vh;
     border-radius: 25px 25px 5px 5px;
     text-align: center;
     box-shadow: 7px 8px 5px black;
@@ -37,7 +39,6 @@
 
 .login {
     background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
-    /* background-color: #bab3a3; */
     color: #751922a2;
     height: 65vh;
     border-radius: 25px 25px 5px 5px;
@@ -46,19 +47,47 @@
     padding: 1px;
 }
 
-.lForm {
-    border: 1px solid blue;
-    margin: 10px;
-    padding: 20px;
-    flex: 1 1 0px;
-    background: #BAB3A3;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+.lform-control {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
     border-radius: 20px;
+    box-sizing: border-box;
+    background: white;
+    max-width: 50%;
+}
+
+.lbtn {
+    appearance: none;
+    background-color: #16302B;
+    border: 2px solid #16302B;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: auto;
+    min-height: 60px;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 50%;
+    will-change: transform;
 }
 
 .reportSightingContainer {
     background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
-    /* background-color: #bab3a3; */
     color: #751922a2;
     height: 65vh;
     border-radius: 25px 25px 5px 5px;
@@ -69,18 +98,55 @@
 
 .register {
     background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
-    /* background-color: #bab3a3; */
     color: #751922a2;
     height: 65vh;
     border-radius: 25px 25px 5px 5px;
     text-align: center;
     box-shadow: 7px 8px 5px black;
     padding: 1px;
+}
+
+.rform-control {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background: white;
+    max-width: 50%;
+}
+
+.rbtn {
+    appearance: none;
+    background-color: #16302B;
+    border: 2px solid #16302B;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: auto;
+    min-height: 60px;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 50%;
+    will-change: transform;
 }
 
 .account {
     background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
-    /* background-color: #bab3a3; */
     color: #751922a2;
     font-weight: bold;
     height: 65vh;
@@ -90,31 +156,28 @@
     padding: 1px;
 }
 
+/* nav bar */
 .list {
-    /* border: 2px solid blue; */
     display: flex;
     list-style-type: none;
     flex-wrap: nowrap;
-    padding: 14px 0px 14px 0px;
-    margin: -45px 30px 1px 130px;
+    margin: -45px 30px 0px 100px;
 }
 
 .nav {
     display: flex;
-    /* border: 2px solid blue; */
     background-color: #99917f;
     text-decoration: none;
-    /* padding: 15px; */
     border-radius: 25px 25px 0px 0px;
     margin: 0px 2px 0px 2px;
     box-shadow: 4px 0px black;
-    /* text-shadow: 1px 1px #751922a2; */
 }
 
+
+/* nav bar style */
 .n1 {
     padding: 15px 20px 15px 20px;
     font-weight: bold;
-    /* font-family: walterturncoat; */
     color: #751922a2;
 }
 
@@ -135,14 +198,16 @@
     font-weight: bold;
     color: #751922a2;
 }
+
 /* Styling for logout button */
 .b1 {
-
-   padding: 18px 45px 15px 45px;
-   float: right;
-
+    padding: 15px 45px 17px 45px;
+    font-weight: 900;
+    color: #751922a2;
+    border: none;
 }
 
+/* nav bar effects */
 .nav:focus {
     background-color: #bab3a3;
 }
@@ -151,9 +216,4 @@
     background-color: #bab3a3;
 }
 
-/* .footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2em 0em 0em 0em;
-} */
+
