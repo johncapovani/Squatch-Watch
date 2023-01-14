@@ -77,7 +77,7 @@ function Register() {
                     <div className='form-group'>
                         <input
                             type='text'
-                            className='form-control'
+                            className='rform-control'
                             id='name'
                             name='name'
                             value={name}
@@ -88,7 +88,7 @@ function Register() {
                     <div className='form-group'>
                         <input
                             type='email'
-                            className='form-control'
+                            className='rform-control'
                             id='email'
                             name='email'
                             value={email}
@@ -96,10 +96,10 @@ function Register() {
                             onChange={onChange}
                         />
                     </div>
-                    <div className='form-group'>
+                    <div className='rform-group'>
                         <input
                             type='password'
-                            className='form-control'
+                            className='rform-control'
                             id='password'
                             name='password'
                             value={password}
@@ -110,7 +110,7 @@ function Register() {
                     <div className='form-group'>
                         <input
                             type='password'
-                            className='form-control'
+                            className='rform-control'
                             id='password2'
                             name='password2'
                             value={password2}
@@ -119,7 +119,7 @@ function Register() {
                         />
                     </div>
                     <div className='form-group'>
-                        <button type='submit' className='btn btn-block'>
+                        <button type='submit' className='btn btn-block rbtn'>
                             Submit
                         </button>
                     </div>
