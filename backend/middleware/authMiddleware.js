@@ -5,7 +5,7 @@ const User = require('../models/userModel')
 const protect = asyncHandler(async (req, res, next) => {
 
     let token
-    //Confirm there is authroization in header and the token starts with  bearer
+    //Confirm there is authorization in header and the token starts with 'Bearer'
     if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
 
         try {
@@ -13,11 +13,11 @@ const protect = asyncHandler(async (req, res, next) => {
             token = req.headers.authorization.split(' ')[1]
 
             //Verify token
-
             const decoded = jwt.verify(token, process.env.JWT_SECRET)
 
             //Get user from the token
             req.user = await User.findById(decoded.id).select('-password')
+            
             //Calls next piece of middleware
             next()
 

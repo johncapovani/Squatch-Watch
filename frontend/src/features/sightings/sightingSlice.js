@@ -27,7 +27,7 @@ export const getSightings = createAsyncThunk(
     }
 )
 
-export const sightingsSlice = createSlice({
+export const sightingSlice = createSlice({
     name: 'sightings',
     initialState,
     reducers: {
@@ -80,5 +80,5 @@ export const sightingsSlice = createSlice({
     },
   })
   
-  export const { reset } = goalSlice.actions
-  export default goalSlice.reducer
+  export const { reset } = sightingSlice.actions
+  export default sightingSlice.reducer

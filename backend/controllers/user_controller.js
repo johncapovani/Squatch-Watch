@@ -12,11 +12,9 @@ const User = require('../models/userModel')
 //@access Public
 const registerUser = asyncHandler(async (req, res) => {
     //destructure body data
-
     const { name, email, password } = req.body
 
     if (!name || !email || !password) {
-
         res.status(400)
         throw new Error('Please add all required fields')
     }
