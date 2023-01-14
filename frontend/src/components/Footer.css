@@ -1,18 +1,24 @@
+.footer-text{
+    z-index: 1;
+    position: absolute;
+}
+
 .scrolling-image-container{
     overflow: hidden;
+    z-index:-1;
 }
 
 .top-image {
     background: url("../assets/fgfoot.png") repeat-x;
     height: 130px;
-    width: 2560px;
+    width: 5120px;
     animation: slide 90s linear infinite
 }
 
 .bottom-image {
     background: url("../assets/bgfoot.png") repeat-x;
     height: 130px;
-    width: 2560px;
+    width: 5120px;
     animation: slide 120s linear infinite
 }
 
