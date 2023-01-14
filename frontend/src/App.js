@@ -24,8 +24,6 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/account' element={<User_Profile />} />
           <Route path='/report' element={<Create_Update_Sighting />} />
-          {/* For testing */}
-          <Route path='/onesighting' element={<Datacard />} />
 
         </Routes>
         <Footer />
