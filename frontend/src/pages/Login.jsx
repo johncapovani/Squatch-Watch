@@ -57,6 +57,7 @@ function Login() {
 
   return (
     <>
+    <div className='login'>
       <section className='heading'>
         <h1>
           <FaSignInAlt /> Login
@@ -64,8 +65,8 @@ function Login() {
         <p>Login to interact with Squatch Watch!</p>
       </section>
 
-      <section className='form'>
-        <form onSubmit={onSubmit}>
+      <section>
+        <form className='lForm' onSubmit={onSubmit}>
           <div className='form-group'>
             <input
               type='email'
@@ -75,7 +76,7 @@ function Login() {
               value={email}
               placeholder='Enter your email'
               onChange={onChange}
-            />
+              />
           </div>
           <div className='form-group'>
             <input
@@ -86,7 +87,7 @@ function Login() {
               value={password}
               placeholder='Enter password'
               onChange={onChange}
-            />
+              />
           </div>
 
           <div className='form-group'>
@@ -96,6 +97,7 @@ function Login() {
           </div>
         </form>
       </section>
+    </div>
     </>
   )
 }
