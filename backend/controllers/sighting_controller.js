@@ -41,8 +41,7 @@ const getSightings = asyncHandler(async (req, res) => {
 
 //need this?
 //READ ONE sighting
-//GET
-//not sure how to put the auth requirements in here
+//GET /api/sightings/:id
 const getOneSighting = asyncHandler(async (req, res) => {
     //get one sighting from mongodb, returns one sighting by ID
     const oneSighting = await Sighting.findById(req.params.id)
@@ -87,6 +86,8 @@ const updateSighting = asyncHandler(async (req, res) => {
 //DELETE /api/sightings/:id
 //Access Level Private
 const deleteSighting = asyncHandler(async (req, res) => {
+
+    const sighting = await Sighting.findById(req.params.id)
 
     if (!sighting) {
         res.status(400)
