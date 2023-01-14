@@ -36,7 +36,7 @@
     border-radius: 20px;
 }
 
-.reportform-container input[type=text] {
+.reportform-container input[type=text], input[type=date], input[type=time]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;

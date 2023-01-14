@@ -1,0 +1,30 @@
+.account-container{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 60vh;
+    padding: 10px 5px;
+    box-sizing: border-box;
+
+}
+
+.account-info-item{
+
+     margin: 10px;
+    padding: 20px;
+    flex: 1 1 0px;
+    background: #BAB3A3;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 20px;
+}
+
+.account-statistics-item{
+
+    margin: 10px;
+    padding: 20px;
+    flex: 1 1 0px;
+    background: whitesmoke;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 20px;
+}
