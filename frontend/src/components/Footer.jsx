@@ -6,13 +6,17 @@ import {
     faInstagram
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {Link} from 'react-router-dom'
 
 const Footer = () => {
     return (
         <div className='footer'>
         <div className="footer-text">
-            <p className='icons'>
-                <b>Contact Us</b> <FontAwesomeIcon icon={faInstagram}/>     <FontAwesomeIcon icon={faTwitter}/>   <FontAwesomeIcon icon={faFacebook}/>
+            <p className='orange-text'>
+                <b>Contact Us       </b>
+                     <a href="https://www.instagram.com/bigfootgone/?hl=en" className='icons'><FontAwesomeIcon icon={faInstagram}/></a>
+                     <a href="https://twitter.com/AndCryptids" className='icons'><FontAwesomeIcon icon={faTwitter}/></a> 
+                     <a className='icons' href="https://www.facebook.com/groups/sasquatchworld/"><FontAwesomeIcon icon={faFacebook}/></a>
             </p>
             <p className='copyright'>
                 &copy; {new Date().getFullYear()} | Squatch Watch Inc. | All rights reserved

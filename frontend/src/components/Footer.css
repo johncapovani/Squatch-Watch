@@ -11,10 +11,15 @@
 .copyright{
     font-size: 16px;
     text-align: center;
-    color:rgb(240, 255, 245);
+    color:rgb(165, 177, 165);
 }
 
 .icons{
+    color:#F17A2A;
+    padding:4px;
+}
+
+.orange-text{
     text-align: right;
     color:#F17A2A;
     padding-right: 60px;
