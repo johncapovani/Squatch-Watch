@@ -1,11 +1,11 @@
-* {
+/* * {
     background-color: #122723;
     color: #751922a2;
-}
+} */
 
 .container {
     padding: 20px;
-    
+    background-color: #122723;
 }
 
 .logo {
@@ -27,6 +27,8 @@
 .home {
     background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
     /* background-color:#bab3a3; */
+    color: #751922a2;
+    font-weight: bold;
     height: 70vh;
     border-radius: 25px 25px 5px 5px;
     text-align: center;
@@ -36,37 +38,56 @@
 .login {
     background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
     /* background-color: #bab3a3; */
-    height: 70vh;
+    color: #751922a2;
+    height: 65vh;
     border-radius: 25px 25px 5px 5px;
     text-align: center;
     box-shadow: 7px 8px 5px black;
+    padding: 1px;
 }
 
-.report {
+.lForm {
+    border: 1px solid blue;
+    margin: 10px;
+    padding: 20px;
+    flex: 1 1 0px;
+    background: #BAB3A3;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 20px;
+}
+
+.reportSightingContainer {
     background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
     /* background-color: #bab3a3; */
-    height: 70vh;
+    color: #751922a2;
+    height: 65vh;
     border-radius: 25px 25px 5px 5px;
     text-align: center;
     box-shadow: 7px 8px 5px black;
+    padding: 1px;
 }
 
 .register {
     background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
     /* background-color: #bab3a3; */
-    height: 70vh;
+    color: #751922a2;
+    height: 65vh;
     border-radius: 25px 25px 5px 5px;
     text-align: center;
     box-shadow: 7px 8px 5px black;
+    padding: 1px;
 }
 
 .account {
     background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
     /* background-color: #bab3a3; */
-    height: 70vh;
+    color: #751922a2;
+    font-weight: bold;
+    height: 65vh;
     border-radius: 25px 25px 5px 5px;
     text-align: center;
-    box-shadow: 4px 4px 5px black;
+    box-shadow: 7px 8px 5px black;
+    padding: 1px;
 }
 
 .list {
@@ -93,21 +114,25 @@
     padding: 15px 20px 15px 20px;
     font-weight: bold;
     /* font-family: walterturncoat; */
+    color: #751922a2;
 }
 
 .n2 {
     padding: 15px 55px 15px 55px;
     font-weight: bold;
+    color: #751922a2;
 }
 
 .n3 {
     padding: 15px 45px 15px 45px;
     font-weight: bold;
+    color: #751922a2;
 }
 
 .n4 {
     padding: 15px 40px 15px 40px;
     font-weight: bold;
+    color: #751922a2;
 }
 
 .nav:focus {
@@ -118,9 +143,9 @@
     background-color: #bab3a3;
 }
 
-.footer {
+/* .footer {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 2em 0em 0em 0em;
-}
+} */
