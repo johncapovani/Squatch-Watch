@@ -1,7 +1,5 @@
 * {
     background-color: #122723;
-    /* border: 1px solid blue; */
-    /* padding: 10px; */
     color: #751922a2;
 }
 
@@ -11,15 +9,15 @@
 }
 
 .logo {
+    /* background-image: url(https://dejpknyizje2n.cloudfront.net/svgcustom/clipart/preview/bigfoot-or-sasquatch-sighting-29688-300x300.png); */
     text-decoration: none;
     display: flex;
     justify-content: center;
     font-size: 40px;
+    height: 2.5em;
+    width: 3.5em;
+    background-size: 100px;
 }
-
-/* .header {
-    padding: 2em;
-} */
 
 .gallery {
     background-color: #bab3a3;
@@ -27,7 +25,7 @@
 }
 
 .home {
-    background-image: linear-gradient(to right, #bab3a3, #afaa9c, #999486);
+    background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
     /* background-color:#bab3a3; */
     height: 70vh;
     border-radius: 25px 25px 5px 5px;
@@ -36,7 +34,7 @@
 }
 
 .login {
-    background-image: linear-gradient(to right, #bab3a3, #afaa9c, #999486);
+    background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
     /* background-color: #bab3a3; */
     height: 70vh;
     border-radius: 25px 25px 5px 5px;
@@ -45,7 +43,7 @@
 }
 
 .report {
-    background-image: linear-gradient(to right, #bab3a3, #afaa9c, #999486);
+    background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
     /* background-color: #bab3a3; */
     height: 70vh;
     border-radius: 25px 25px 5px 5px;
@@ -54,7 +52,7 @@
 }
 
 .register {
-    background-image: linear-gradient(to right, #bab3a3, #afaa9c, #999486);
+    background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
     /* background-color: #bab3a3; */
     height: 70vh;
     border-radius: 25px 25px 5px 5px;
@@ -63,7 +61,7 @@
 }
 
 .account {
-    background-image: linear-gradient(to right, #bab3a3, #afaa9c, #999486);
+    background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
     /* background-color: #bab3a3; */
     height: 70vh;
     border-radius: 25px 25px 5px 5px;
@@ -77,9 +75,7 @@
     list-style-type: none;
     flex-wrap: nowrap;
     padding: 14px 0px 14px 0px;
-    margin: 20px 15px 1px 30px;
-    /* justify-content: center; */
-    
+    margin: -45px 30px 1px 130px;
 }
 
 .nav {
@@ -90,23 +86,28 @@
     border-radius: 25px 25px 0px 0px;
     margin: 0px 2px 0px 2px;
     box-shadow: 4px 0px black;
-
+    /* text-shadow: 1px 1px #751922a2; */
 }
 
 .n1 {
     padding: 15px 20px 15px 20px;
+    font-weight: bold;
+    /* font-family: walterturncoat; */
 }
 
 .n2 {
     padding: 15px 55px 15px 55px;
+    font-weight: bold;
 }
 
 .n3 {
     padding: 15px 45px 15px 45px;
+    font-weight: bold;
 }
 
 .n4 {
     padding: 15px 40px 15px 40px;
+    font-weight: bold;
 }
 
 .nav:focus {
@@ -116,8 +117,6 @@
 .nav:hover {
     background-color: #bab3a3;
 }
-
-
 
 .footer {
     display: flex;

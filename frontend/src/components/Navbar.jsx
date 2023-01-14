@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <header className='header'>
       <div>
-        <Link className='logo' to='/'>Squatch Watch</Link>
+        <Link className='logo' to='/'><img src="https://dejpknyizje2n.cloudfront.net/svgcustom/clipart/preview/bigfoot-or-sasquatch-sighting-29688-300x300.png" alt="" /></Link>
       </div>
       <ul className='list'>
         <li>
