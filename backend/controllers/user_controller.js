@@ -81,16 +81,8 @@ const loginUser = asyncHandler(async (req, res) => {
 //@route GET /api/users/me
 //@access Private protected route
 const getMe = asyncHandler(async (req, res) => {
-    //destructure the id
-    const { _id, name, email } = await User.findById(req.user.id)
-
-    res.status(200).json({
-
-        id: _id,
-        name,
-        email,
-
-    })
+    //got user in the middleware
+    res.status(200).json(req.user)
 })
 
 
@@ -98,7 +90,7 @@ const getMe = asyncHandler(async (req, res) => {
 const generateToken = (id) => {
 
     return jwt.sign({ id }, process.env.JWT_SECRET, {
-        expiresIn: '1d',
+        expiresIn: '30d',
     })
 }
 
