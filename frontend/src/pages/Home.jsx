@@ -3,7 +3,7 @@ import Gallery from '../components/Gallery';
 
 function Home() {
   return (
-    <div>Welcome Home 
+    <div className='home'>Welcome Home 
       <Gallery />
     </div>
   )
