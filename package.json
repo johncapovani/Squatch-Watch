@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon backend/index.js",
     "server": "nodemon backend/index.js",
-    "client": "npm start --prefix frontend"
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,8 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.8.3",
     "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
   }
 }

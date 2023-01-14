@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from
   'react-router-dom'
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 import './App.css';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -11,24 +12,29 @@ import Create_Update_Sighting from './pages/Create_Update_Sighting'
 import Home from './pages/Home';
 
 
+
+
 function App() {
   return (
-    <Router>
-      <div className='container'>
-        <Navbar />
-        <Routes>
+    <>
+      <Router>
+        <div className='container'>
+          <Navbar />
+          <Routes>
 
-          <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/account' element={<User_Profile />} />
-          <Route path='/report' element={<Create_Update_Sighting />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/account' element={<User_Profile />} />
+            <Route path='/report' element={<Create_Update_Sighting />} />
 
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
-  );
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+      <ToastContainer/>
+      </>
+      );
 }
 
-export default App;
+      export default App;
