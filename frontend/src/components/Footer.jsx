@@ -1,12 +1,13 @@
 import React from 'react';
+import './Footer.css'
 
 const Footer = () => {
     return (
-        <div className='main-footer'>
-            <div className='container'>
-                <h3>This is the footer.</h3>
+        <div className='scrolling-image-container'>
+            <div className='bottom-image'>
+                <div className="top-image"></div>
             </div>
-            <br />
+
             <p className='copyright'>
                 &copy; {new Date().getFullYear()} | Squatch Watch Inc. | All rights reserved
             </p>

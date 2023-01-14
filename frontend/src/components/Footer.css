@@ -1,0 +1,26 @@
+.scrolling-image-container{
+    overflow: hidden;
+}
+
+.top-image {
+    background: url("../assets/fgfoot.png") repeat-x;
+    height: 130px;
+    width: 2560px;
+    animation: slide 90s linear infinite
+}
+
+.bottom-image {
+    background: url("../assets/bgfoot.png") repeat-x;
+    height: 130px;
+    width: 2560px;
+    animation: slide 120s linear infinite
+}
+
+@keyframes slide {
+    0% {
+      transform: translate(0);
+    }
+    100% {
+      transform: translate(-1280px); /* The image width */
+    }
+  }
