@@ -1,11 +1,11 @@
 
-.reportSightingContainer {
+/* .reportSightingContainer {
     background: #BAB3A3;
     border: 1px solid black;
     height: 65VH;
     padding: 10px;
     border-radius: 20px
-}
+} */
 
 .reportform-container {
 
@@ -48,6 +48,12 @@
     
 }
 
+.detailarea {
+    width: 1px;
+    max-height: 55vh;
+    padding: 5px;
+}
+
 /* Button Styling */
 
 .sightingButton {
@@ -77,8 +83,6 @@
     will-change: transform;
 
 }
-
-
 
 .sightingButton:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
