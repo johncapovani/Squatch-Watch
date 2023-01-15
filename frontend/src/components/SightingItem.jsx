@@ -1,4 +1,4 @@
-import { sightingsSlice } from '../features/sightings/sightingSlice'
+// import { sightingsSlice } from '../features/sightings/sightingSlice'
 import './SightingItem.css'
 
 function SightingItem({ sighting }) {

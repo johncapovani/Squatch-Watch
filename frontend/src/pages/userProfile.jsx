@@ -5,10 +5,10 @@ import { useSelector, useDispatch } from 'react-redux'
 import Spinner from '../components/Spinner'
 import { getMySightings, reset } from '../features/sightings/sightingSlice'
 //Import CSS
-import './userProfile.css'
+import './UserProfile.css'
 import SightingItem from '../components/SightingItem'
 
-function userProfile() {
+function UserProfile() {
 
   const navigate = useNavigate()
 
@@ -94,4 +94,4 @@ function userProfile() {
   )
 }
 
-export default userProfile
+export default UserProfile
