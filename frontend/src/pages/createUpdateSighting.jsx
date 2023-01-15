@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Create_Update_Sighting.css"
+import "./createUpdateSighting.css"
 
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
@@ -10,7 +10,7 @@ import { createSighting, reset } from '../features/sightings/sightingSlice'
 import Spinner from '../components/Spinner'
 import { toast } from 'react-toastify'
 
-function Create_Update_Sighting() {
+function createUpdateSighting() {
 
 
   //Create the useState to collect form information when a sighting is being created
@@ -133,4 +133,4 @@ function Create_Update_Sighting() {
   )
 }
 
-export default Create_Update_Sighting
+export default createUpdateSighting

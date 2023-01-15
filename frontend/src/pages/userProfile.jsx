@@ -3,9 +3,9 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 //Import CSS
-import './User_Profile.css'
+import './userProfile.css'
 
-function User_Profile() {
+function userProfile() {
 
   const navigate = useNavigate()
 
@@ -52,4 +52,4 @@ function User_Profile() {
   )
 }
 
-export default User_Profile
+export default userProfile
