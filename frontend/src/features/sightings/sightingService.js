@@ -17,6 +17,20 @@ const createSighting = async (sightingData, token) => {
 
 }
 
+//Get user specifc sightings
+const getMySightings = async (token) => {
+
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    }
+
+    const response = await axios.get(API_URL, config)
+
+    return response.data
+
+}
 
 //Get sightings
 const getSightings = async () => {
@@ -27,7 +41,8 @@ const getSightings = async () => {
 
 const sightingService = {
     getSightings,
-    createSighting
+    createSighting,
+    getMySightings,
 }
 
 export default sightingService

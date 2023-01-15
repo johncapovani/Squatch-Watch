@@ -39,7 +39,7 @@ function Navbar() {
 
             <li>
               <Link className='nav n3' to='/account'>
-                My Account
+                My Profile
               </Link>
             </li>
 

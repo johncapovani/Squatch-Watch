@@ -14,9 +14,10 @@
      margin: 10px;
     padding: 20px;
     flex: 1 1 0px;
-    background: #BAB3A3;
+    background: #16302B;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 20px;
+    color: whitesmoke;
 }
 
 .account-statistics-item{
@@ -27,4 +28,14 @@
     background: whitesmoke;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 20px;
+    max-height: 60VH;
+}
+
+.accountbackground{
+
+     background: #BAB3A3;
+    border: 1px solid black;
+    height: 65VH;
+    padding: 10px;
+    border-radius: 20px
 }
