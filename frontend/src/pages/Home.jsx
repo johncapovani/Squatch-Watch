@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { getSightings, reset } from "../features/sightings/sightingSlice";
 import Datacard from "../components/Datacard";
 
-const Home = () => {
+function Home() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
