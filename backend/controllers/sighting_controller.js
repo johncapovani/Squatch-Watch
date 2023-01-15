@@ -34,7 +34,7 @@ const createSighting = asyncHandler(async (req, res) => {
 //Access Level Public
 const getSightings = asyncHandler(async (req, res) => {
     //get sightings through our mongoDB returns all of the sightings
-    const allSightings = await Sighting.find()
+    const allSightings = await Sighting.find({ user: req.user.id })
 
     res.status(200).json(allSightings)
 })

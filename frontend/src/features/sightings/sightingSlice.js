@@ -50,6 +50,27 @@ export const createSighting = createAsyncThunk(
   }
 )
 
+//Get user specific sightings
+export const getMySightings = createAsyncThunk('sightings/getMine',
+  async (_, thunkAPI) => {
+
+    try {
+      //Get JSON Token user must be authenticated
+      const token = thunkAPI.getState().auth.user.token
+      return await sightingService.getMySightings(token)
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString()
+      return thunkAPI.rejectWithValue(message)
+
+    }
+  })
+
+
 export const sightingsSlice = createSlice({
   name: 'sightings',
   initialState,
@@ -72,6 +93,22 @@ export const sightingsSlice = createSlice({
         state.isError = true
         state.message = action.payload
       })
+      //Get user specifc sightings for sightings dashboard
+      .addCase(getMySightings.pending, (state) => {
+        state.isLoading = true
+      })
+      .addCase(getMySightings.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.isSuccess = true
+        state.sightings = action.payload
+      })
+      .addCase(getMySightings.rejected, (state, action) => {
+        state.isLoading = false
+        state.isError = true
+        state.message = action.payload
+      })
+      //End User Specific slice settings
+
       .addCase(getSightings.pending, (state) => {
         state.isLoading = true
       })
