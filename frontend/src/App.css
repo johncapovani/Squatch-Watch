@@ -35,6 +35,12 @@
     border-radius: 25px 25px 5px 5px;
     text-align: center;
     box-shadow: 7px 8px 5px black;
+    margin: none;
+    padding: 5px;
+}
+
+.content {
+    padding: 5px;
 }
 
 .login {
@@ -145,7 +151,7 @@
     will-change: transform;
 }
 
-.account {
+.account-container {
     background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
     color: #751922a2;
     font-weight: bold;
@@ -153,7 +159,7 @@
     border-radius: 25px 25px 5px 5px;
     text-align: center;
     box-shadow: 7px 8px 5px black;
-    padding: 1px;
+    padding: 0px;
 }
 
 /* nav bar */

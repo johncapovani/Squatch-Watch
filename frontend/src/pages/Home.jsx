@@ -24,7 +24,7 @@ const Home = () => {
     }, [user, navigate, isError, message, dispatch])
 
     return (
-        <div>
+        <div className="home">
             <section className="content">
                 {sightings.length > 0 ? (
                     <div className="sightings">
