@@ -1,8 +1,9 @@
-// import { sightingsSlice } from '../features/sightings/sightingSlice'
+import { deleteSighting } from '../features/sightings/sightingSlice'
+import { useDispatch } from "react-redux"
 import './SightingItem.css'
 
 function SightingItem({ sighting }) {
-
+    const dispatch = useDispatch()
     return (
         <>
 
@@ -33,6 +34,10 @@ function SightingItem({ sighting }) {
                     <br />
                     <b>Time:</b> {sighting.time}
                 </div>
+                <button className="viewreport"
+                onClick={() => dispatch(deleteSighting(sighting._id))}>
+                Delete Sighting
+            </button>
 
             </li>
 
