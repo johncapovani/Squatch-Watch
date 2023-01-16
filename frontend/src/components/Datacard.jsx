@@ -6,7 +6,7 @@ const Datacard = ({sighting}) => {
         <>
         <div className="goal">
             <div className="column-one">
-                <img/>
+                <img src={sighting.image} alt="user's image"/>
                 <div>
                     <h4> Reported by: {sighting.user}</h4>
                     <h4> Species: {sighting.species} </h4>

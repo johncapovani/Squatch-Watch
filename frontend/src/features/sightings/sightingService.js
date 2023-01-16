@@ -17,7 +17,7 @@ const createSighting = async (sightingData, token) => {
 
 }
 
-//Get user specifc sightings
+//Get user specific sightings
 const getMySightings = async (token) => {
 
     const config = {
