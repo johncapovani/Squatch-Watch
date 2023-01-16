@@ -1,12 +1,9 @@
-/* * {
-   
-} */
-
 /* background color */
 .container {
     padding: 20px;
     background-color: #122723;
     margin: 0px;
+    height:100vh;
 }
 
 /* logo sizing */
@@ -20,18 +17,12 @@
     background-size: 100px;
 }
 
-
-.gallery {
-    background-color: #bab3a3;
-    height: 4vh;
-}
-
-/* page styling and managment */
+/* page styling and management */
 .home {
     background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
-    color: #751922a2;
+    color: #2e0307a2;
     font-weight: bold;
-    height: 65vh;
+    height: 75vh;
     border-radius: 25px 25px 5px 5px;
     text-align: center;
     box-shadow: 7px 8px 5px black;
@@ -39,8 +30,8 @@
 
 .login {
     background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
-    color: #751922a2;
-    height: 65vh;
+    color: #2e0307a2;
+    height: 75vh;
     border-radius: 25px 25px 5px 5px;
     text-align: center;
     box-shadow: 7px 8px 5px black;
@@ -88,8 +79,8 @@
 
 .reportSightingContainer {
     background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
-    color: #751922a2;
-    height: 65vh;
+    color: #2e0307a2;
+    height: 75vh;
     border-radius: 25px 25px 5px 5px;
     text-align: center;
     box-shadow: 7px 8px 5px black;
@@ -98,8 +89,8 @@
 
 .register {
     background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
-    color: #751922a2;
-    height: 65vh;
+    color: #2e0307a2;
+    height: 75vh;
     border-radius: 25px 25px 5px 5px;
     text-align: center;
     box-shadow: 7px 8px 5px black;
@@ -147,9 +138,9 @@
 
 .account {
     background-image: linear-gradient(to bottom, #bab3a3, #afaa9c, #999486);
-    color: #751922a2;
+    color: #2e0307a2;
     font-weight: bold;
-    height: 65vh;
+    height: 75vh;
     border-radius: 25px 25px 5px 5px;
     text-align: center;
     box-shadow: 7px 8px 5px black;
@@ -178,32 +169,32 @@
 .n1 {
     padding: 15px 20px 15px 20px;
     font-weight: bold;
-    color: #751922a2;
+    color: #2e0307a2;
 }
 
 .n2 {
     padding: 15px 55px 15px 55px;
     font-weight: bold;
-    color: #751922a2;
+    color: #2e0307a2;
 }
 
 .n3 {
     padding: 15px 45px 15px 45px;
     font-weight: bold;
-    color: #751922a2;
+    color: #2e0307a2;
 }
 
 .n4 {
     padding: 15px 40px 15px 40px;
     font-weight: bold;
-    color: #751922a2;
+    color: #2e0307a2;
 }
 
 /* Styling for logout button */
 .b1 {
     padding: 15px 45px 17px 45px;
     font-weight: 900;
-    color: #751922a2;
+    color: #2e0307a2;
     border: none;
 }
 

@@ -1,71 +1,50 @@
+import './Datacard.css'
 import { useState } from 'react'
 
-function Datacard({sighting}){
+function Datacard({ sighting }) {
 
-    let [view,setView] = useState(false)
-
-    const simpleStyle = {
-        'width': '25vw',
-        'height': '20vh',
-        'border': '1px solid black',
-        'margin': '2px'
-    }
+    let [view, setView] = useState(false)
 
     const simpleView = () => {
-        return(
-            <div style={simpleStyle}>
-                <img src={sighting.images} alt="user's" />  <h3>{sighting.date}</h3>  <h4>{sighting.species}</h4>
-            </div>
+        return (
+            <>
+                <div className="simpleStyle">
+                    <div><img className="small-image" src={sighting.images} alt="user's" /> </div>
+                    <div><h3>{new Date(sighting.date).toLocaleString('en-US').substring(0, 10)}</h3></div>
+                    <div><h4>{sighting.species}</h4></div>
+                </div>
+                <hr/>
+            </>
         )
-    }
-
-    const detailStyle = {
-        'width': '80vw',
-        'height': '20vh',
-        'border': '1px solid black',
-        'margin': '2px',
-        // this url isn't working for some reason
     }
 
     const detailView = () => {
-        return(
-            <div style={detailStyle}>
-                <h2>{sighting.date}</h2>
-                <h3>{sighting.species}</h3>
-                <h4>{sighting.time}</h4>
-                <h4>{sighting.description}</h4>
-            </div>
+        return (
+            <>
+                <div className='detailStyle'>
+                    <img className="large-image" src={sighting.images} alt="user's" />
+                    <div className='detailed-info'>
+                        <h2>{new Date(sighting.date).toLocaleString('en-US').substring(0, 10)}</h2>
+                        <h3>Species: {sighting.species}</h3>
+                        <h4>Sighting location: {sighting.location}</h4>
+                    </div>
+                    <div className='detailed-info'>
+                        <h3 className='report'>Report:</h3>
+                        {/* <p className='description'>{sighting.description}</p> */}
+                        <textarea className='description' value={sighting.description}></textarea>
+                    </div>
+
+                </div>
+                <hr/>
+            </>
         )
     }
 
-    return(
-        <div onClick={() => setView(!view)} style={{'display':'inline-block'}}>
+    return (
+        <div onClick={() => setView(!view)}>
             {view ? detailView() : simpleView()}
+
         </div>
     )
 }
 export default Datacard
-
-// // import {useDispatch} from 'react-redux';
-
-// function Datacard({ sighting }) {
-//     // const dispatch = useDispatch()
-//     return (
-//             <li className="sighting">
-//                 <div className="column-one">
-//                     <img src={sighting.images} alt="user's" />
-//                     <div>
-//                         <h4> Reported by: {sighting.user}</h4>
-//                         <h4> Species: {sighting.species} </h4>
-//                     </div>
-//                 </div>
-//                 <div className="column-two">
-//                     <h2>{sighting.date}</h2>
-//                     <h4>{sighting.time}</h4>
-//                     <p className="description">{sighting.description}</p>
-//                 </div>
-//             </li>
-//     )
-// }
-
-// export default Datacard;

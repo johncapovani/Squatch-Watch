@@ -29,7 +29,7 @@ function SightingItem({ sighting }) {
                     <b>Location:</b> {sighting.location}
                     <br />
                     <br />
-                    <b>Date:</b> {sighting.date}
+                    <b>Date:</b> {new Date(sighting.date).toLocaleString('en-US').substring(0,10)}
                     <br />
                     <br />
                     <b>Time:</b> {sighting.time}

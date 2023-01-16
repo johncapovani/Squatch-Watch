@@ -4,6 +4,7 @@ import { getSightings, reset } from "../features/sightings/sightingSlice";
 import { useNavigate } from "react-router-dom";
 import Datacard from "../components/Datacard";
 import Spinner from '../components/Spinner'
+import '../App.css'
 
 function Home() {
     const navigate = useNavigate()
@@ -28,7 +29,8 @@ function Home() {
     }
 
     return (
-        <div>
+        <div className="home">
+            <h2 style={{paddingTop: '10px'}}>Report Feed</h2>
             <section className="content">
                 {sightings.length > 0 ? (
                     <div className="sightings">
