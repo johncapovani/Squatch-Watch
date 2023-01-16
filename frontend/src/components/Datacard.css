@@ -1,0 +1,21 @@
+.simpleStyle{
+    display: inline-block;
+    width: 80vw;
+    height: 20vh;
+    margin: 2px;
+}
+
+.simpleStyle.img{
+    width:400px;
+}
+
+.detailStyle {
+    width: 80vw;
+    height: 20vh;
+    margin: 2px;
+}
+
+hr{
+    border: 3px dashed #122723;
+    width: 90vw
+  }
