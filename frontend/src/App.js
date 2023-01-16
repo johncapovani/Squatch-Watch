@@ -7,8 +7,8 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Login from './pages/Login';
 import Register from './pages/Register';
-import UserProfile from './pages/UserProfile'
-import CreateUpdateSighting from './pages/CreateUpdateSighting'
+import UserProfile from './pages/UserProfile.jsx'
+import CreateUpdateSighting from './pages/CreateUpdateSighting.jsx'
 import Home from './pages/Home';
 
 
@@ -32,9 +32,9 @@ function App() {
           <Footer />
         </div>
       </Router>
-      <ToastContainer/>
-      </>
-      );
+      <ToastContainer />
+    </>
+  );
 }
 
-      export default App;
+export default App;

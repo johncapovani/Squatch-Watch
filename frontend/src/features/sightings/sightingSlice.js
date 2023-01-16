@@ -135,7 +135,7 @@ export const sightingsSlice = createSlice({
       .addCase(getSightings.fulfilled, (state, action) => {
         state.isLoading = false
         state.isSuccess = true
-        state.goals = action.payload
+        state.sightings = action.payload
       })
       .addCase(getSightings.rejected, (state, action) => {
         state.isLoading = false
