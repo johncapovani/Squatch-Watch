@@ -31,11 +31,11 @@ function Home() {
         <div>
             <section className="content">
                 {sightings.length > 0 ? (
-                    <ul className="sightings">
+                    <div className="sightings">
                         {sightings.map((sightings) => (
                             <Datacard key={sightings._id} sighting={sightings} />
                         ))}
-                    </ul>
+                    </div>
                 ) : (<h3>No sightings found.</h3>)}
             </section>
         </div>
