@@ -1,37 +1,41 @@
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { getSightings, reset } from "../features/sightings/sightingSlice";
+import { useNavigate } from "react-router-dom";
 import Datacard from "../components/Datacard";
+import Spinner from '../components/Spinner'
 
-const Home = () => {
+function Home() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
-
-    const { user } = useSelector((state) => state.auth)
-    const { sightings, isError, message } = useSelector((state) => state.sightings)
+    const { sightings, isError, isLoading, message } = useSelector((state) => state.sightings)
 
     useEffect(() => {
         if (isError) {
             console.log(message);
         }
-        
+
         dispatch(getSightings())
 
         return () => {
             dispatch(reset())
         }
-    }, [user, navigate, isError, message, dispatch])
+    }, [isError, message, navigate, dispatch])
+
+
+    if (isLoading) {
+        return <Spinner />
+    }
 
     return (
         <div>
             <section className="content">
                 {sightings.length > 0 ? (
-                    <div className="sightings">
-                        {sightings.map((sighting) => (
-                            <Datacard key={sighting._id} sighting={sighting} />
+                    <ul className="sightings">
+                        {sightings.map((sightings) => (
+                            <Datacard key={sightings._id} sighting={sightings} />
                         ))}
-                    </div>
+                    </ul>
                 ) : (<h3>No sightings found.</h3>)}
             </section>
         </div>

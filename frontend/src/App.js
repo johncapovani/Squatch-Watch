@@ -7,8 +7,8 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Login from './pages/Login';
 import Register from './pages/Register';
-import User_Profile from './pages/User_Profile'
-import Create_Update_Sighting from './pages/Create_Update_Sighting'
+import UserProfile from './pages/UserProfile'
+import CreateUpdateSighting from './pages/CreateUpdateSighting'
 import Home from './pages/Home';
 
 
@@ -25,8 +25,8 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/account' element={<User_Profile />} />
-            <Route path='/report' element={<Create_Update_Sighting />} />
+            <Route path='/account' element={<UserProfile />} />
+            <Route path='/report' element={<CreateUpdateSighting />} />
 
           </Routes>
           <Footer />

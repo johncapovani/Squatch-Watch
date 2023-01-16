@@ -17,7 +17,7 @@ const createSighting = async (sightingData, token) => {
 
 }
 
-//Get user specifc sightings
+//Get user specific sightings
 const getMySightings = async (token) => {
 
     const config = {
@@ -26,7 +26,7 @@ const getMySightings = async (token) => {
         }
     }
 
-    const response = await axios.get(API_URL, config)
+    const response = await axios.get(API_URL + 'user', config)
 
     return response.data
 
@@ -39,10 +39,23 @@ const getSightings = async () => {
     return response.data
 }
 
+//Delete a sighting
+const deleteSighting = async(sightingID, token) => {
+    const config = {
+        headers:{
+            Authorization: `Bearer ${token}`
+        },
+    }
+
+    const response = await axios.delete(API_URL + sightingID, config)
+    return response.data
+}
+
 const sightingService = {
     getSightings,
     createSighting,
     getMySightings,
+    deleteSighting
 }
 
 export default sightingService
