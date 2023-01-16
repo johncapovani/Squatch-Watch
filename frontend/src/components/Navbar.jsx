@@ -28,14 +28,15 @@ function Navbar() {
         <Link className='logo' to='/'><img src="https://dejpknyizje2n.cloudfront.net/svgcustom/clipart/preview/bigfoot-or-sasquatch-sighting-29688-300x300.png" alt="" /></Link>
       </div>
       <ul className='list'>
-        <li>
-          <Link className='nav n1' to='/report'>
-            Report a Sighting
-          </Link>
-        </li>
+
 
         {user ? (
           <>
+            <li>
+              <Link className='nav n1' to='/report'>
+                Report a Sighting
+              </Link>
+            </li>
 
             <li>
               <Link className='nav n3' to='/account'>

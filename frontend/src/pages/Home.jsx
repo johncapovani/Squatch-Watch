@@ -30,6 +30,7 @@ function Home() {
 
     return (
         <div className="home">
+            <h2 style={{paddingTop: '10px'}}>Report Feed</h2>
             <section className="content">
                 {sightings.length > 0 ? (
                     <div className="sightings">
