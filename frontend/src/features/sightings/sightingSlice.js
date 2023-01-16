@@ -70,6 +70,26 @@ export const getMySightings = createAsyncThunk('sightings/getMine',
     }
   })
 
+//Delete user sighting
+export const deleteSighting = createAsyncThunk(
+  'sightings/delete',
+  async (id, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.user.token
+      return await sightingService.deleteSighting(id, token)
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString()
+      return thunkAPI.rejectWithValue(message)
+
+    }
+  }
+)
+
 
 export const sightingsSlice = createSlice({
   name: 'sightings',
@@ -122,21 +142,21 @@ export const sightingsSlice = createSlice({
         state.isError = true
         state.message = action.payload
       })
-    // .addCase(deleteGoal.pending, (state) => {
-    //   state.isLoading = true
-    // })
-    // .addCase(deleteGoal.fulfilled, (state, action) => {
-    //   state.isLoading = false
-    //   state.isSuccess = true
-    //   state.goals = state.goals.filter(
-    //     (goal) => goal._id !== action.payload.id
-    //   )
-    // })
-    // .addCase(deleteGoal.rejected, (state, action) => {
-    //   state.isLoading = false
-    //   state.isError = true
-    //   state.message = action.payload
-    // })
+      .addCase(deleteSighting.pending, (state) => {
+        state.isLoading = true
+      })
+      .addCase(deleteSighting.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.isSuccess = true
+        state.sightings = state.sightings.filter(
+          (sighting) => sighting._id !== action.payload.id
+        )
+      })
+      .addCase(deleteSighting.rejected, (state, action) => {
+        state.isLoading = false
+        state.isError = true
+        state.message = action.payload
+      })
   },
 })
 

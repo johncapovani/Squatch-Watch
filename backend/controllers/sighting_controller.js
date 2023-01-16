@@ -27,11 +27,19 @@ const createSighting = asyncHandler(async (req, res) => {
 
 })
 
-
-
 //READ all sightings
 //GET /api/sightings/
 //Access Level Public
+const getAllSightings = asyncHandler(async (req, res) => {
+    //get sightings through our mongoDB returns all of the sightings
+    const feedSightings = await Sighting.find()
+
+    res.status(200).json(feedSightings)
+})
+
+//READ all sightings from one user
+//GET /api/sightings/user
+//Access Level Private
 const getSightings = asyncHandler(async (req, res) => {
     //get sightings through our mongoDB returns all of the sightings
     const allSightings = await Sighting.find({ user: req.user.id })
@@ -113,5 +121,10 @@ const deleteSighting = asyncHandler(async (req, res) => {
 
 
 module.exports = {
-    getSightings, createSighting, deleteSighting, updateSighting, getOneSighting
+    getSightings,
+    createSighting,
+    deleteSighting,
+    updateSighting,
+    getOneSighting,
+    getAllSightings
 }
