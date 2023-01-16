@@ -1,15 +1,12 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { getSightings, reset } from "../features/sightings/sightingSlice";
 import Datacard from "../components/Datacard";
+import Spinner from '../components/Spinner'
 
 function Home() {
-    const navigate = useNavigate()
     const dispatch = useDispatch()
-
-    const { user } = useSelector((state) => state.auth)
-    const { sightings, isError, message } = useSelector((state) => state.sightings)
+    const { sightings, isError, isLoading, message } = useSelector((state) => state.sightings)
 
     useEffect(() => {
         if (isError) {
@@ -21,17 +18,22 @@ function Home() {
         return () => {
             dispatch(reset())
         }
-    }, [user, navigate, isError, message, dispatch])
+    }, [isError, message, dispatch])
+
+    
+  if (isLoading) {
+    return <Spinner />
+  }
 
     return (
         <div>
             <section className="content">
                 {sightings.length > 0 ? (
-                    <div className="sightings">
+                    <ul className="sightings">
                         {sightings.map((sighting) => (
                             <Datacard key={sighting._id} sighting={sighting} />
                         ))}
-                    </div>
+                    </ul>
                 ) : (<h3>No sightings found.</h3>)}
             </section>
         </div>

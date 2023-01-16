@@ -1,12 +1,12 @@
 // import {useDispatch} from 'react-redux';
 
-const Datacard = ({sighting}) => {
+function Datacard({sighting}){
     // const dispatch = useDispatch()
     return(
         <>
         <div className="goal">
             <div className="column-one">
-                <img src={sighting.image} alt="user's image"/>
+                <img src={sighting.images} alt="user's"/>
                 <div>
                     <h4> Reported by: {sighting.user}</h4>
                     <h4> Species: {sighting.species} </h4>

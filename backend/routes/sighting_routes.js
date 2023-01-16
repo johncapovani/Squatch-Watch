@@ -7,7 +7,7 @@ const { getSightings, createSighting, deleteSighting, updateSighting, getOneSigh
 const { protect } = require('../middleware/authMiddleware')
 
 //GET all public sightings
-router.get('/',getAllSightings)
+router.get('/', getAllSightings)
 
 //GET all sightings for one user
 router.get('/user', protect, getSightings)
