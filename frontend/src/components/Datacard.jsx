@@ -9,9 +9,9 @@ function Datacard({ sighting }) {
         return (
             <>
                 <div className="simpleStyle">
-                    <div><img className="small-image" src={sighting.images} alt="user's" /> </div>
+                    <div><img className="small-image" src={sighting.images} alt={sighting.species} /> </div>
                     <div><h3>{new Date(sighting.date).toLocaleString('en-US').substring(0, 10)}</h3></div>
-                    <div><h4>{sighting.species}</h4></div>
+                    <div><h4>Species spotted: {sighting.species}</h4></div>
                 </div>
                 <hr/>
             </>
@@ -22,7 +22,7 @@ function Datacard({ sighting }) {
         return (
             <>
                 <div className='detailStyle'>
-                    <img className="large-image" src={sighting.images} alt="user's" />
+                    <img className="large-image" src={sighting.images} alt={sighting.species} />
                     <div className='detailed-info'>
                         <h2>{new Date(sighting.date).toLocaleString('en-US').substring(0, 10)}</h2>
                         <h3>Species: {sighting.species}</h3>
@@ -30,8 +30,7 @@ function Datacard({ sighting }) {
                     </div>
                     <div className='detailed-info'>
                         <h3 className='report'>Report:</h3>
-                        {/* <p className='description'>{sighting.description}</p> */}
-                        <textarea className='description' value={sighting.description}></textarea>
+                        <textarea className='description' value={sighting.description} readOnly></textarea>
                     </div>
 
                 </div>

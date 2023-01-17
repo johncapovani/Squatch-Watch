@@ -22,11 +22,13 @@ const sightingSchema = new Schema({
     },
     species: {
         type: String,
-        required: true
+        required: true,
+        default: "sasquatch"
     },
     images: {
         type: String,
-        default: ''
+        default: '',
+        placeholder: 'https://upload.wikimedia.org/wikipedia/commons/b/bc/Sasquatch_in_the_woods.jpg'
     },
     description: {
         type: String,
