@@ -48,7 +48,8 @@ hr{
     border-radius: 15px;
     width: 60vw;
     height: 15vh;
-    font-size: 1.5em;
+    font-size: 1em;
+    font-family: 'Neucha', cursive;
 }
 
 .large-image{

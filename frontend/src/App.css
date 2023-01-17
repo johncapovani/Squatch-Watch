@@ -1,3 +1,14 @@
+/* fonts */
+h2,
+h3{
+    font-family: 'Walter Turncoat', cursive;
+}
+
+h4,
+p{
+    font-family: 'Neucha', cursive;
+}
+
 /* background color */
 .container {
     padding: 20px;
@@ -165,38 +176,42 @@
     box-shadow: 4px 0px black;
 }
 
-
 /* nav bar style */
 .n1 {
     padding: 15px 20px 15px 20px;
     font-weight: bold;
     color: #2e0307a2;
+    font-family: 'Walter Turncoat', cursive;
 }
 
 .n2 {
     padding: 15px 55px 15px 55px;
     font-weight: bold;
     color: #2e0307a2;
+    font-family: 'Walter Turncoat', cursive;
 }
 
 .n3 {
     padding: 15px 45px 15px 45px;
     font-weight: bold;
     color: #2e0307a2;
+    font-family: 'Walter Turncoat', cursive;
 }
 
 .n4 {
     padding: 15px 40px 15px 40px;
     font-weight: bold;
     color: #2e0307a2;
+    font-family: 'Walter Turncoat', cursive;
 }
 
 /* Styling for logout button */
 .b1 {
-    padding: 15px 45px 17px 45px;
+    padding: 15px 45px 19px 45px;
     font-weight: 900;
     color: #2e0307a2;
     border: none;
+    font-family: 'Walter Turncoat', cursive;
 }
 
 /* nav bar effects */
