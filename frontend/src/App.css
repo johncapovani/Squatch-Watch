@@ -26,6 +26,7 @@
     border-radius: 25px 25px 5px 5px;
     text-align: center;
     box-shadow: 7px 8px 5px black;
+    overflow: scroll;
 }
 
 .login {

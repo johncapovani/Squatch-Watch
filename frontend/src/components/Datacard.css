@@ -4,18 +4,26 @@
     width: 80vw;
     height: 8vh;
     padding: 25px 10px 25px 40px;
+    
+}
+
+.simpleStyle > *{
+    margin: 0px 25px 0px 0px;
+    
 }
 
 .small-image{
-    width:100px;
+    width:100%;
+    max-height: 8vh;
 }
 
 /* Detailed View */
 .detailStyle {
     display:flex;
     width: 80vw;
-    height: 20vh;
+    height: 100%;
     margin: 2px;
+    padding: 25px 10px 25px 40px;
 }
 
 .report{
@@ -38,6 +46,7 @@
 
 .large-image{
     width:200px;
+    height:100%;
 }
 
 
