@@ -1,11 +1,11 @@
 /* fonts */
 h2,
-h3{
+h3 {
     font-family: 'Walter Turncoat', cursive;
 }
 
 h4,
-p{
+p {
     font-family: 'Neucha', cursive;
 }
 
@@ -14,19 +14,23 @@ p{
     padding: 20px;
     background-color: #122723;
     margin: 0px;
-    height:100vh;
+    height: 100vh;
 }
 
 /* logo sizing */
 .logo {
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    font-size: 40px;
-    height: 2.5em;
-    width: 3.5em;
-    background-size: 100px;
+    display: inline-block;
+    margin: 5px 20px -15px;
+    height: 110px;
+    width: 110px;
+    background: url("./assets/logo.png")no-repeat;
+    position: relative;
 }
+
+.logo:hover{
+   background: url("./assets/backlogo.png")no-repeat;
+}
+
 
 /* page styling and management */
 .home {
@@ -222,5 +226,3 @@ p{
 .nav:hover {
     background-color: #bab3a3;
 }
-
-
