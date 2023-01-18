@@ -4,6 +4,7 @@ import { getSightings, reset } from "../features/sightings/sightingSlice";
 import { useNavigate } from "react-router-dom";
 import Datacard from "../components/Datacard";
 import Spinner from '../components/Spinner'
+import '../App.css'
 
 function Home() {
     const navigate = useNavigate()
@@ -28,14 +29,15 @@ function Home() {
     }
 
     return (
-        <div>
+        <div className="home">
+            <h2 style={{paddingTop: '10px'}}>Report Feed</h2>
             <section className="content">
                 {sightings.length > 0 ? (
-                    <ul className="sightings">
+                    <div className="sightings">
                         {sightings.map((sightings) => (
                             <Datacard key={sightings._id} sighting={sightings} />
                         ))}
-                    </ul>
+                    </div>
                 ) : (<h3>No sightings found.</h3>)}
             </section>
         </div>

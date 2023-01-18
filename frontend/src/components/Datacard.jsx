@@ -1,23 +1,49 @@
-// import {useDispatch} from 'react-redux';
+import './Datacard.css'
+import { useState } from 'react'
 
 function Datacard({ sighting }) {
-    // const dispatch = useDispatch()
-    return (
-            <li className="sighting">
-                <div className="column-one">
-                    <img src={sighting.images} alt="user's" />
-                    <div>
-                        <h4> Reported by: {sighting.user}</h4>
-                        <h4> Species: {sighting.species} </h4>
+
+    let [view, setView] = useState(false)
+
+    const simpleView = () => {
+        return (
+            <>
+                <div className="simpleStyle">
+                    <div><img className="small-image" src={sighting.images} alt={sighting.species} /> </div>
+                    <div><h3>{new Date(sighting.date).toLocaleString('en-US').substring(0, 10)}</h3></div>
+                    <div><h4>Species spotted: {sighting.species}</h4></div>
+                </div>
+                <hr/>
+            </>
+        )
+    }
+
+    const detailView = () => {
+        return (
+            <>
+                <div className='detailStyle'>
+                    <img className="large-image" src={sighting.images} alt={sighting.species} />
+                    <div className='detailed-info'>
+                        <h2>{new Date(sighting.date).toLocaleString('en-US').substring(0, 10)}</h2>
+                        <h3>Species: {sighting.species}</h3>
+                        <h4>Sighting location: {sighting.location}</h4>
                     </div>
+                    <div className='detailed-info'>
+                        <h3 className='report'>Report:</h3>
+                        <textarea className='description' value={sighting.description} readOnly></textarea>
+                    </div>
+
                 </div>
-                <div className="column-two">
-                    <h2>{sighting.date}</h2>
-                    <h4>{sighting.time}</h4>
-                    <p className="description">{sighting.description}</p>
-                </div>
-            </li>
+                <hr/>
+            </>
+        )
+    }
+
+    return (
+        <div onClick={() => setView(!view)}>
+            {view ? detailView() : simpleView()}
+
+        </div>
     )
 }
-
-export default Datacard;
+export default Datacard
