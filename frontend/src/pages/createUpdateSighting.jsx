@@ -59,7 +59,7 @@ function CreateUpdateSighting() {
 
     //form validation
 
-    if (!date || !time || !location || !species || !images || !description) {
+    if (!date || !time || !location || !species || !description) {
       toast.error('Populate all required fields')
     } else {
 
@@ -106,7 +106,7 @@ function CreateUpdateSighting() {
             </div>
             <div>
               <label htmlFor="image-url">Image URL</label>
-              <input id="image-url" type="text" name='images' value={images} onChange={onChange} />
+              <input id="image-url" type="text" name='images' value={images} onChange={onChange}/>
             </div>
             <button className='sightingButton' type="submit">Publish Your Sighting!</button>
           </div>
