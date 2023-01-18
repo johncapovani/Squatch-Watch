@@ -2,8 +2,18 @@ import { deleteSighting } from '../features/sightings/sightingSlice'
 import { useDispatch } from "react-redux"
 import './SightingItem.css'
 
+import { useNavigate } from 'react-router-dom'
+
+
+
 function SightingItem({ sighting }) {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    const onNav = () => {
+        navigate('/update')
+    }
+
     return (
         <>
 
@@ -15,7 +25,7 @@ function SightingItem({ sighting }) {
                     <h3 className="card-title">Spotted {sighting.species}</h3>
 
                     <p>{sighting.description}</p>
-                    <button className='viewreport'>View Report</button>
+                    <button onClick={onNav} className='viewreport'>Update Report</button>
                     <br />
                     <br />
                     <br />

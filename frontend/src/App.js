@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import UserProfile from './pages/UserProfile.jsx'
 import CreateUpdateSighting from './pages/CreateUpdateSighting.jsx'
+import UpdateSighting from './pages/UpdateSighting.jsx'
 import Home from './pages/Home';
 
 
@@ -27,6 +28,7 @@ function App() {
             <Route path='/register' element={<Register />} />
             <Route path='/account' element={<UserProfile />} />
             <Route path='/report' element={<CreateUpdateSighting />} />
+            <Route path='/update' element={<UpdateSighting />} />
 
           </Routes>
           <Footer />

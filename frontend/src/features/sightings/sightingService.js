@@ -40,9 +40,9 @@ const getSightings = async () => {
 }
 
 //Delete a sighting
-const deleteSighting = async(sightingID, token) => {
+const deleteSighting = async (sightingID, token) => {
     const config = {
-        headers:{
+        headers: {
             Authorization: `Bearer ${token}`
         },
     }
@@ -51,11 +51,24 @@ const deleteSighting = async(sightingID, token) => {
     return response.data
 }
 
+//Update a sighting
+const updateSighting = async (sightingID, sightingData, token) => {
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`
+        },
+    }
+
+    const response = await axios.post(API_URL + sightingID, sightingData, config)
+    return response.data
+}
+
 const sightingService = {
     getSightings,
     createSighting,
     getMySightings,
-    deleteSighting
+    deleteSighting,
+    updateSighting
 }
 
 export default sightingService

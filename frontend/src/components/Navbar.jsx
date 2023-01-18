@@ -39,12 +39,6 @@ function Navbar() {
             </li>
 
             <li>
-              <Link className='nav n1' to='/report'>
-                Report a Sighting
-              </Link>
-            </li>
-
-            <li>
               <Link className='nav n3' to='/account'>
                 My Profile
               </Link>
