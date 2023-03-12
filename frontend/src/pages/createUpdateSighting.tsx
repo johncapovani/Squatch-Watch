@@ -1,7 +1,7 @@
-import React from 'react'
+//import React from 'react'
 import "./CreateUpdateSighting.css"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, ReactElement, FC, FormEvent } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router'
 //Bring in the create Sighting function from Sighting Slice
@@ -10,11 +10,11 @@ import { createSighting, reset } from '../features/sightings/sightingSlice'
 import Spinner from '../components/Spinner'
 import { toast } from 'react-toastify'
 
-function CreateUpdateSighting() {
+const CreateUpdateSighting:FC = (): ReactElement => {
 
 
   //Create the useState to collect form information when a sighting is being created
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<any>({
     date: '',
     time: '',
     location: '',
@@ -29,10 +29,10 @@ function CreateUpdateSighting() {
   const dispatch = useDispatch()
 
   const { sightings, isLoading, isError, isSuccess, message } = useSelector(
-    (state) => state.sightings
+    (state:any):any => state.sightings
   )
 
-  useEffect(() => {
+  useEffect((): void => {
     if (isError) {
       toast.error(message)
     }
@@ -47,14 +47,14 @@ function CreateUpdateSighting() {
 
   //When the user types trigger the onchange
 
-  const onChange = (e) => {
-    setFormData((prevState) => ({
+  const onChange = (e: any): void => {
+    setFormData((prevState: any) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }))
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
 
     //form validation

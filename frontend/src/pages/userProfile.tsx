@@ -1,5 +1,5 @@
-import React from 'react'
-import { useEffect } from 'react'
+import React, { ReactElement } from 'react'
+import { useEffect, FC } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import Spinner from '../components/Spinner'
@@ -8,16 +8,16 @@ import { getMySightings, reset } from '../features/sightings/sightingSlice'
 import './UserProfile.css'
 import SightingItem from '../components/SightingItem'
 
-function UserProfile() {
+const UserProfile: FC = ():ReactElement => {
 
   const navigate = useNavigate()
 
   const dispatch = useDispatch()
 
-  const { user } = useSelector((state) => state.auth)
-  const { sightings, isLoading, isError, message } = useSelector((state) => state.sightings)
+  const { user } = useSelector((state:any):any => state.auth)
+  const { sightings, isLoading, isError, message } = useSelector((state:any):any => state.sightings)
 
-  useEffect(() => {
+  useEffect(():any => {
 
     if (isError) {
 
@@ -35,7 +35,7 @@ function UserProfile() {
     dispatch(getMySightings())
 
     //Clear sighting when user leaves page
-    return () => {
+    return ():any => {
 
       dispatch(reset)
     }
@@ -76,7 +76,7 @@ function UserProfile() {
               {sightings.length > 0 ? (
                 <ul className='cards'>
 
-                  {sightings.map((sightings) => (
+                  {sightings.map((sightings:any):any => (
                     <SightingItem key={sightings._id} sighting={sightings} />
                   ))}
 

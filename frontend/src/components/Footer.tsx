@@ -8,7 +8,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 //need the FC here?
-const Footer: FC<any> = (): any => {
+const Footer: FC = (): any => {
     return (
         <div className='footer'>
             <div className="footer-text">

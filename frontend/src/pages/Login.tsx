@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, FC, ReactElement } from 'react'
 import { FaSignInAlt } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { FormEncType, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { login, reset } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
 import "./Login.css"
 
-function Login() {
-  const [formData, setFormData] = useState({
+const Login:FC = ():ReactElement => {
+  const [formData, setFormData] = useState<any>({
     email: '',
     password: '',
   })
@@ -19,10 +19,10 @@ function Login() {
   const dispatch = useDispatch()
 
   const { user, isLoading, isError, isSuccess, message } = useSelector(
-    (state) => state.auth
+    (state:any):any => state.auth
   )
 
-  useEffect(() => {
+  useEffect(():void => {
     if (isError) {
       toast.error(message)
     }
@@ -34,14 +34,14 @@ function Login() {
     dispatch(reset())
   }, [user, isError, isSuccess, message, navigate, dispatch])
 
-  const onChange = (e) => {
-    setFormData((prevState) => ({
+  const onChange = (e:any):void => {
+    setFormData((prevState:any):void => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }))
   }
 
-  const onSubmit = (e) => {
+  const onSubmit = (e:any):void => {
     e.preventDefault()
 
     const userData = {

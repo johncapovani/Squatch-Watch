@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { FC } from 'react';
+//import { FC } from 'react';
 import sightingService from './sightingService'
 
 const initialState = {
@@ -98,52 +98,52 @@ export const sightingsSlice = createSlice({
   reducers: {
     reset: (state) => initialState,
   },
-  extraReducers: (builder) => {
+  extraReducers: (builder:any):void => {
     builder
 
-      .addCase(createSighting.pending, (state: any): any => {
+      .addCase(createSighting.pending, (state: any): void => {
         state.isLoading = true
       })
-      .addCase(createSighting.fulfilled, (state: any, action: any): any => {
+      .addCase(createSighting.fulfilled, (state: any, action: any): void => {
         state.isLoading = false
         state.isSuccess = true
         state.sightings = action.payload
       })
-      .addCase(createSighting.rejected, (state: any, action: any): any => {
+      .addCase(createSighting.rejected, (state: any, action: any): void => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload
       })
       //Get user specifc sightings for sightings dashboard
-      .addCase(getMySightings.pending, (state: any): any => {
+      .addCase(getMySightings.pending, (state: any): void => {
         state.isLoading = true
       })
-      .addCase(getMySightings.fulfilled, (state: any, action: any): any => {
+      .addCase(getMySightings.fulfilled, (state: any, action: any): void => {
         state.isLoading = false
         state.isSuccess = true
         state.sightings = action.payload
       })
-      .addCase(getMySightings.rejected, (state: any, action: any): any => {
+      .addCase(getMySightings.rejected, (state: any, action: any): void => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload
       })
       //End User Specific slice settings
 
-      .addCase(getSightings.pending, (state: any) => {
+      .addCase(getSightings.pending, (state: any):void => {
         state.isLoading = true
       })
-      .addCase(getSightings.fulfilled, (state: any, action: any): any => {
+      .addCase(getSightings.fulfilled, (state: any, action: any): void => {
         state.isLoading = false
         state.isSuccess = true
         state.sightings = action.payload
       })
-      .addCase(getSightings.rejected, (state: any, action: any): any => {
+      .addCase(getSightings.rejected, (state: any, action: any): void => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload
       })
-      .addCase(deleteSighting.pending, (state: any): any => {
+      .addCase(deleteSighting.pending, (state: any): void => {
         state.isLoading = true
       })
       .addCase(deleteSighting.fulfilled, (state: any, action: any): any => {
@@ -153,7 +153,7 @@ export const sightingsSlice = createSlice({
           (sighting: any): any => sighting._id !== action.payload.id
         )
       })
-      .addCase(deleteSighting.rejected, (state: any, action: any): any => {
+      .addCase(deleteSighting.rejected, (state: any, action: any): void => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload

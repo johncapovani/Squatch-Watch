@@ -1,10 +1,10 @@
 //I need to read up on docs for typing dispatch and thunks
-
+import {FC, ReactElement} from 'react';
 import { deleteSighting } from '../features/sightings/sightingSlice'
 import { useDispatch } from "react-redux"
 import './SightingItem.css'
 
-function SightingItem({ sighting }:any) {
+const SightingItem:FC<any> = ({ sighting }):ReactElement => {
     const dispatch = useDispatch()
     return (
         <>
