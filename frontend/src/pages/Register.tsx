@@ -7,7 +7,15 @@ import { register, reset } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
 
 const Register:FC = ():ReactElement => {
-    const [formData, setFormData] = useState<any>({
+
+    interface RegisterState{
+        name: string,
+        email: string,
+        password: string,
+        password2: string,
+    }
+
+    const [formData, setFormData] = useState<RegisterState>({
         name: '',
         email: '',
         password: '',
@@ -36,7 +44,7 @@ const Register:FC = ():ReactElement => {
     }, [user, isError, isSuccess, message, navigate, dispatch])
 
     const onChange = (e:any):void => {
-        setFormData((prevState:any):void => ({
+        setFormData((prevState:RegisterState):RegisterState => ({
             ...prevState,
             [e.target.name]: e.target.value,
         }))

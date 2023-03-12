@@ -12,9 +12,17 @@ import { toast } from 'react-toastify'
 
 const CreateUpdateSighting:FC = (): ReactElement => {
 
+  interface FormState {
+    date: string,
+    time: string,
+    location: string,
+    species: string,
+    images: string,
+    description: string,
+  }
 
   //Create the useState to collect form information when a sighting is being created
-  const [formData, setFormData] = useState<any>({
+  const [formData, setFormData] = useState<FormState>({
     date: '',
     time: '',
     location: '',
@@ -115,7 +123,7 @@ const CreateUpdateSighting:FC = (): ReactElement => {
             <div>
               <label htmlFor="Sighting Details">Sighting Details</label>
               <div className='detailarea' >
-                <textarea placeholder="Describe your sighting experience in detail..." rows="7" name='description' value={description} onChange={onChange} ></textarea>
+                <textarea placeholder="Describe your sighting experience in detail..." name='description' value={description} onChange={onChange} ></textarea>
               </div>
             </div>
           </div>

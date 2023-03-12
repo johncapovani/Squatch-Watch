@@ -8,7 +8,13 @@ import Spinner from '../components/Spinner'
 import "./Login.css"
 
 const Login:FC = ():ReactElement => {
-  const [formData, setFormData] = useState<any>({
+
+  interface LoginState{
+    email:string,
+    password:string,
+  }
+
+  const [formData, setFormData] = useState<LoginState>({
     email: '',
     password: '',
   })
@@ -35,7 +41,7 @@ const Login:FC = ():ReactElement => {
   }, [user, isError, isSuccess, message, navigate, dispatch])
 
   const onChange = (e:any):void => {
-    setFormData((prevState:any):void => ({
+    setFormData((prevState:LoginState):LoginState => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }))
