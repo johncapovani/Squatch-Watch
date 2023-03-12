@@ -3,7 +3,7 @@ import axios from 'axios'
 const API_URL = '/api/sightings/'
 
 //Create new sighting
-const createSighting = async (sightingData, token) => {
+const createSighting = async (sightingData:any, token:any):Promise<any> => {
 
     const config = {
         headers: {
@@ -18,7 +18,7 @@ const createSighting = async (sightingData, token) => {
 }
 
 //Get user specific sightings
-const getMySightings = async (token) => {
+const getMySightings = async (token:any):Promise<any> => {
 
     const config = {
         headers: {
@@ -33,14 +33,14 @@ const getMySightings = async (token) => {
 }
 
 //Get sightings
-const getSightings = async () => {
+const getSightings = async ():Promise<any> => {
     const response = await axios.get(API_URL)
 
     return response.data
 }
 
 //Delete a sighting
-const deleteSighting = async(sightingID, token) => {
+const deleteSighting = async(sightingID:any, token:any):Promise<any> => {
     const config = {
         headers:{
             Authorization: `Bearer ${token}`

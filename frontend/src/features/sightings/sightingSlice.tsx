@@ -12,10 +12,10 @@ const initialState = {
 //Get all sightings
 export const getSightings = createAsyncThunk(
   'sightings/getAll',
-  async (thunkAPI) => {
+  async (thunkAPI:any):Promise<any> => {
     try {
       return await sightingService.getSightings()
-    } catch (error) {
+    } catch (error:any) {
       const message =
         (error.response &&
           error.response.data &&
@@ -32,13 +32,13 @@ export const getSightings = createAsyncThunk(
 export const createSighting = createAsyncThunk(
   'sightings/create',
 
-  async (sightingData, thunkAPI) => {
+  async (sightingData:any, thunkAPI:any) => {
 
     try {
       //Get JSON Token user must be authenticated
       const token = thunkAPI.getState().auth.user.token
       return await sightingService.createSighting(sightingData, token)
-    } catch (error) {
+    } catch (error:any) {
       const message =
         (error.response &&
           error.response.data &&
@@ -52,13 +52,13 @@ export const createSighting = createAsyncThunk(
 
 //Get user specific sightings
 export const getMySightings = createAsyncThunk('sightings/getMine',
-  async (_, thunkAPI) => {
+  async (_, thunkAPI:any) => {
 
     try {
       //Get JSON Token user must be authenticated
       const token = thunkAPI.getState().auth.user.token
       return await sightingService.getMySightings(token)
-    } catch (error) {
+    } catch (error:any) {
       const message =
         (error.response &&
           error.response.data &&
@@ -73,11 +73,11 @@ export const getMySightings = createAsyncThunk('sightings/getMine',
 //Delete user sighting
 export const deleteSighting = createAsyncThunk(
   'sightings/delete',
-  async (id, thunkAPI) => {
+  async (id:any, thunkAPI:any) => {
     try {
       const token = thunkAPI.getState().auth.user.token
       return await sightingService.deleteSighting(id, token)
-    } catch (error) {
+    } catch (error:any) {
       const message =
         (error.response &&
           error.response.data &&
@@ -100,59 +100,59 @@ export const sightingsSlice = createSlice({
   extraReducers: (builder) => {
     builder
 
-      .addCase(createSighting.pending, (state) => {
+      .addCase(createSighting.pending, (state:any):any => {
         state.isLoading = true
       })
-      .addCase(createSighting.fulfilled, (state, action) => {
+      .addCase(createSighting.fulfilled, (state:any, action:any):any => {
         state.isLoading = false
         state.isSuccess = true
         state.sightings = action.payload
       })
-      .addCase(createSighting.rejected, (state, action) => {
+      .addCase(createSighting.rejected, (state:any, action:any):any => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload
       })
       //Get user specifc sightings for sightings dashboard
-      .addCase(getMySightings.pending, (state) => {
+      .addCase(getMySightings.pending, (state:any):any => {
         state.isLoading = true
       })
-      .addCase(getMySightings.fulfilled, (state, action) => {
+      .addCase(getMySightings.fulfilled, (state:any, action:any):any => {
         state.isLoading = false
         state.isSuccess = true
         state.sightings = action.payload
       })
-      .addCase(getMySightings.rejected, (state, action) => {
+      .addCase(getMySightings.rejected, (state:any, action:any):any => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload
       })
       //End User Specific slice settings
 
-      .addCase(getSightings.pending, (state) => {
+      .addCase(getSightings.pending, (state:any) => {
         state.isLoading = true
       })
-      .addCase(getSightings.fulfilled, (state, action) => {
+      .addCase(getSightings.fulfilled, (state:any, action:any):any => {
         state.isLoading = false
         state.isSuccess = true
         state.sightings = action.payload
       })
-      .addCase(getSightings.rejected, (state, action) => {
+      .addCase(getSightings.rejected, (state:any, action:any):any => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload
       })
-      .addCase(deleteSighting.pending, (state) => {
+      .addCase(deleteSighting.pending, (state:any):any => {
         state.isLoading = true
       })
-      .addCase(deleteSighting.fulfilled, (state, action) => {
+      .addCase(deleteSighting.fulfilled, (state:any, action:any):any => {
         state.isLoading = false
         state.isSuccess = true
         state.sightings = state.sightings.filter(
-          (sighting) => sighting._id !== action.payload.id
+          (sighting:any):any => sighting._id !== action.payload.id
         )
       })
-      .addCase(deleteSighting.rejected, (state, action) => {
+      .addCase(deleteSighting.rejected, (state:any, action:any):any => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload
