@@ -2,7 +2,7 @@
 import "./CreateUpdateSighting.css"
 
 import { useState, useEffect, ReactElement, FC, FormEvent } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useAppSelector, useAppDispatch} from '../app/hooks'
 import { useNavigate } from 'react-router'
 //Bring in the create Sighting function from Sighting Slice
 import { createSighting, reset } from '../features/sightings/sightingSlice'
@@ -26,9 +26,9 @@ const CreateUpdateSighting:FC = (): ReactElement => {
   const { date, time, location, species, images, description } = formData
 
   const navigate = useNavigate()
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
-  const { sightings, isLoading, isError, isSuccess, message } = useSelector(
+  const { sightings, isLoading, isError, isSuccess, message } = useAppSelector(
     (state:any):any => state.sightings
   )
 

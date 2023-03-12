@@ -1,5 +1,5 @@
 import React, { useEffect, FC, ReactElement } from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import { useAppSelector, useAppDispatch} from '../app/hooks'
 import { getSightings, reset } from "../features/sightings/sightingSlice";
 import { useNavigate } from "react-router-dom";
 import Datacard from "../components/Datacard";
@@ -8,8 +8,8 @@ import '../App.css'
 
 const Home:FC = ():ReactElement => {
     const navigate = useNavigate()
-    const dispatch = useDispatch()
-    const { sightings, isError, isLoading, message } = useSelector((state:any):any => state.sightings)
+    const dispatch = useAppDispatch()
+    const { sightings, isError, isLoading, message } = useAppSelector((state:any):any => state.sightings)
 
     useEffect(():any => {
         if (isError) {

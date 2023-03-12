@@ -1,3 +1,4 @@
+import {FC, ReactElement} from 'react'
 import { BrowserRouter as Router, Routes, Route } from
   'react-router-dom'
 import { ToastContainer } from 'react-toastify';
@@ -7,14 +8,14 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Login from './pages/Login';
 import Register from './pages/Register';
-import UserProfile from './pages/UserProfile'
-import CreateUpdateSighting from './pages/CreateUpdateSighting'
+import UserProfile from './pages/userProfile'
+import CreateUpdateSighting from './pages/createUpdateSighting'
 import Home from './pages/Home';
 
 
 
 
-function App() {
+const App:FC = ():ReactElement => {
   return (
     <>
       <Router>

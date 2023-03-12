@@ -1,7 +1,7 @@
 import { useState, useEffect, FC, ReactElement } from 'react'
 import { FaSignInAlt } from 'react-icons/fa'
-import { useSelector, useDispatch } from 'react-redux'
-import { FormEncType, useNavigate } from 'react-router-dom'
+import { useAppSelector, useAppDispatch} from '../app/hooks'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { login, reset } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
@@ -16,9 +16,9 @@ const Login:FC = ():ReactElement => {
   const { email, password } = formData
 
   const navigate = useNavigate()
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
-  const { user, isLoading, isError, isSuccess, message } = useSelector(
+  const { user, isLoading, isError, isSuccess, message } = useAppSelector(
     (state:any):any => state.auth
   )
 

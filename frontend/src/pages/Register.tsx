@@ -1,5 +1,5 @@
 import { useState, useEffect, FC, ReactElement} from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useAppSelector, useAppDispatch} from '../app/hooks'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { FaUser } from 'react-icons/fa'
@@ -17,9 +17,9 @@ const Register:FC = ():ReactElement => {
     const { name, email, password, password2 } = formData
 
     const navigate = useNavigate()
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
-    const { user, isLoading, isError, isSuccess, message } = useSelector(
+    const { user, isLoading, isError, isSuccess, message } = useAppSelector(
         (state:any):any => state.auth
     )
 

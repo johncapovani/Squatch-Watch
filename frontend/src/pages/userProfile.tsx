@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 import { useEffect, FC } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
+import { useAppSelector, useAppDispatch} from '../app/hooks'
 import Spinner from '../components/Spinner'
 import { getMySightings, reset } from '../features/sightings/sightingSlice'
 //Import CSS
@@ -12,10 +12,10 @@ const UserProfile: FC = ():ReactElement => {
 
   const navigate = useNavigate()
 
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
-  const { user } = useSelector((state:any):any => state.auth)
-  const { sightings, isLoading, isError, message } = useSelector((state:any):any => state.sightings)
+  const { user } = useAppSelector((state:any):any => state.auth)
+  const { sightings, isLoading, isError, message } = useAppSelector((state:any):any => state.sightings)
 
   useEffect(():any => {
 

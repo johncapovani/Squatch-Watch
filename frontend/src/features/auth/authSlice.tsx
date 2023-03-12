@@ -1,10 +1,18 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import authService from './authService'
 
 // Get user from localStorage
 const user = JSON.parse(localStorage.getItem('user'))
 
-const initialState = {
+interface AuthCounterState {
+    user:unknown,
+    isError: boolean,
+    isSuccess: boolean,
+    isLoading: boolean,
+    message: string
+}
+
+const initialState: AuthCounterState = {
     user: user ? user : null,
     isError: false,
     isSuccess: false,
@@ -63,12 +71,12 @@ export const authSlice = createSlice({
             .addCase(register.pending, (state:any):void => {
                 state.isLoading = true
             })
-            .addCase(register.fulfilled, (state:any, action:any):void => {
+            .addCase(register.fulfilled, (state:any, action:PayloadAction<boolean|unknown>):void => {
                 state.isLoading = false
                 state.isSuccess = true
                 state.user = action.payload
             })
-            .addCase(register.rejected, (state:any, action:any):void => {
+            .addCase(register.rejected, (state:any, action:PayloadAction<boolean|unknown>):void => {
                 state.isLoading = false
                 state.isError = true
                 state.message = action.payload
@@ -77,12 +85,12 @@ export const authSlice = createSlice({
             .addCase(login.pending, (state:any):void => {
                 state.isLoading = true
             })
-            .addCase(login.fulfilled, (state:any, action:any):void => {
+            .addCase(login.fulfilled, (state:any, action:PayloadAction<boolean|unknown>):void => {
                 state.isLoading = false
                 state.isSuccess = true
                 state.user = action.payload
             })
-            .addCase(login.rejected, (state:any, action:any):void => {
+            .addCase(login.rejected, (state:any, action:PayloadAction<boolean|unknown>):void => {
                 state.isLoading = false
                 state.isError = true
                 state.message = action.payload

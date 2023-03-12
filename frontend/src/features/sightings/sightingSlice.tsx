@@ -1,8 +1,16 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 //import { FC } from 'react';
 import sightingService from './sightingService'
 
-const initialState = {
+interface CounterState {
+  sightings: unknown[],
+  isError: boolean,
+  isSuccess: boolean,
+  isLoading: boolean,
+  message: string,
+}
+
+const initialState:CounterState = {
   sightings: [],
   isError: false,
   isSuccess: false,
@@ -104,12 +112,12 @@ export const sightingsSlice = createSlice({
       .addCase(createSighting.pending, (state: any): void => {
         state.isLoading = true
       })
-      .addCase(createSighting.fulfilled, (state: any, action: any): void => {
+      .addCase(createSighting.fulfilled, (state: any, action: PayloadAction<boolean|unknown[]>): void => {
         state.isLoading = false
         state.isSuccess = true
         state.sightings = action.payload
       })
-      .addCase(createSighting.rejected, (state: any, action: any): void => {
+      .addCase(createSighting.rejected, (state: any, action: PayloadAction<boolean|unknown[]>): void => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload
@@ -118,12 +126,12 @@ export const sightingsSlice = createSlice({
       .addCase(getMySightings.pending, (state: any): void => {
         state.isLoading = true
       })
-      .addCase(getMySightings.fulfilled, (state: any, action: any): void => {
+      .addCase(getMySightings.fulfilled, (state: any, action: PayloadAction<boolean|unknown[]>): void => {
         state.isLoading = false
         state.isSuccess = true
         state.sightings = action.payload
       })
-      .addCase(getMySightings.rejected, (state: any, action: any): void => {
+      .addCase(getMySightings.rejected, (state: any, action: PayloadAction<boolean|unknown[]>): void => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload
@@ -133,12 +141,12 @@ export const sightingsSlice = createSlice({
       .addCase(getSightings.pending, (state: any):void => {
         state.isLoading = true
       })
-      .addCase(getSightings.fulfilled, (state: any, action: any): void => {
+      .addCase(getSightings.fulfilled, (state: any, action: PayloadAction<boolean|unknown[]>): void => {
         state.isLoading = false
         state.isSuccess = true
         state.sightings = action.payload
       })
-      .addCase(getSightings.rejected, (state: any, action: any): void => {
+      .addCase(getSightings.rejected, (state: any, action: PayloadAction<boolean|unknown[]>): void => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload
@@ -146,14 +154,14 @@ export const sightingsSlice = createSlice({
       .addCase(deleteSighting.pending, (state: any): void => {
         state.isLoading = true
       })
-      .addCase(deleteSighting.fulfilled, (state: any, action: any): any => {
+      .addCase(deleteSighting.fulfilled, (state: any, action: PayloadAction<boolean|any>): any => {
         state.isLoading = false
         state.isSuccess = true
         state.sightings = state.sightings.filter(
           (sighting: any): any => sighting._id !== action.payload.id
         )
       })
-      .addCase(deleteSighting.rejected, (state: any, action: any): void => {
+      .addCase(deleteSighting.rejected, (state: any, action: PayloadAction<boolean|unknown[]>): void => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload
