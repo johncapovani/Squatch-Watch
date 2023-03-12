@@ -1,3 +1,4 @@
+//Doesn't need any TS
 import { configureStore } from '@reduxjs/toolkit'
 //Import auth slice
 import authReducer from '../features/auth/authSlice'
