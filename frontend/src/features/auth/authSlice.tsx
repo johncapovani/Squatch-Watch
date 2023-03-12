@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
+import { AppThunk } from '../../app/store'
 import authService from './authService'
+
 
 // Get user from localStorage
 const user = JSON.parse(localStorage.getItem('user'))
@@ -23,7 +25,7 @@ const initialState: AuthCounterState = {
 // Register user
 export const register = createAsyncThunk(
     'auth/register',
-    async (user:any, thunkAPI:any):Promise<any> => {
+    async (user:any, thunkAPI:any):Promise<AppThunk> => {
         try {
             return await authService.register(user)
         } catch (error:any) {
