@@ -1,14 +1,13 @@
+//I need to read up on docs for typing dispatch and thunks
+
 import { deleteSighting } from '../features/sightings/sightingSlice'
 import { useDispatch } from "react-redux"
 import './SightingItem.css'
 
-function SightingItem({ sighting }) {
+function SightingItem({ sighting }:any) {
     const dispatch = useDispatch()
     return (
         <>
-
-
-
             <li className="card">
                 <div>
                     <img src={sighting.images} alt="" className='data-cardimage' />

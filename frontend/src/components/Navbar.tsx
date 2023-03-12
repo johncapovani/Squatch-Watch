@@ -1,4 +1,6 @@
-import React from 'react'
+//read up on docs for useSelector, useDispatch, useNavigate
+
+//import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaSignInAlt, FaSignOutAlt, FaUser } from 'react-icons/fa'
 
@@ -8,7 +10,7 @@ import { logout, reset } from '../features/auth/authSlice'
 
 
 
-function Navbar() {
+const Navbar = ():any => {
 
   const navigate = useNavigate()
   const dispatch = useDispatch()

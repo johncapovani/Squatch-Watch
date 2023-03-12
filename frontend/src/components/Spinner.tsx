@@ -1,6 +1,6 @@
 import "./Spinner.css"
 
-function Spinner() {
+function Spinner():any {
   return (
     <div className='loadingSpinnerContainer'>
       <div className='loadingSpinner'></div>

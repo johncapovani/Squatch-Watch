@@ -1,11 +1,12 @@
+//TS almost finished due to its similarity to the code along
 import './Datacard.css'
-import { useState } from 'react'
+import { useState, FC, ReactElement } from 'react'
 
-function Datacard({ sighting }) {
+const Datacard:FC<any> = ({ sighting }):ReactElement => {
 
-    let [view, setView] = useState(false)
+    let [view, setView] = useState<boolean>(false)
 
-    const simpleView = () => {
+    const simpleView = ():ReactElement => {
         return (
             <>
                 <div className="simpleStyle">
@@ -18,7 +19,7 @@ function Datacard({ sighting }) {
         )
     }
 
-    const detailView = () => {
+    const detailView = ():ReactElement => {
         return (
             <>
                 <div className='detailStyle'>
@@ -40,7 +41,7 @@ function Datacard({ sighting }) {
     }
 
     return (
-        <div onClick={() => setView(!view)}>
+        <div onClick={():void => setView(!view)}>
             {view ? detailView() : simpleView()}
 
         </div>
