@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { FaSignInAlt, FaSignOutAlt, FaUser } from 'react-icons/fa'
 
 //Access the state to determine if user is logged in or not
-import { useSelector, useDispatch} from 'react-redux'
+import { useAppSelector, useAppDispatch} from '../app/hooks'
 import { logout, reset } from '../features/auth/authSlice'
 import { ReactElement, FC } from 'react'
 
@@ -14,8 +14,8 @@ import { ReactElement, FC } from 'react'
 const Navbar:FC = ():ReactElement => {
 
   const navigate = useNavigate()
-  const dispatch = useDispatch()
-  const { user } = useSelector((state:any):any => state.auth)
+  const dispatch = useAppDispatch()
+  const { user } = useAppSelector((state:any):any => state.auth)
 
   //Logout a user
 
