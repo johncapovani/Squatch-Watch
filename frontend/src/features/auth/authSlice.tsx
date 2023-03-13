@@ -4,7 +4,9 @@ import authService from './authService'
 
 
 // Get user from localStorage
-const user = JSON.parse(localStorage.getItem('user'))
+// ! is a non-null assertion
+const user = JSON.parse(localStorage.getItem('user')!)
+
 
 interface AuthCounterState {
     user:unknown,
