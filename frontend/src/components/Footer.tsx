@@ -1,4 +1,3 @@
-import { FC } from 'react';
 import './Footer.css'
 import {
     faTwitter,
@@ -6,9 +5,10 @@ import {
     faInstagram
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FC, ReactElement } from 'react'
 
 //need the FC here?
-const Footer: FC = (): any => {
+const Footer: FC = ():ReactElement => {
     return (
         <div className='footer'>
             <div className="footer-text">

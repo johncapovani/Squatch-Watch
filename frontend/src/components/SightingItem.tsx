@@ -4,7 +4,7 @@ import { deleteSighting } from '../features/sightings/sightingSlice'
 import { useAppDispatch} from '../app/hooks'
 import './SightingItem.css'
 
-const SightingItem:FC<any> = ({ sighting }):ReactElement => {
+const SightingItem:FC = ({ sighting }:any):ReactElement => {
     const dispatch = useAppDispatch()
     return (
         <>

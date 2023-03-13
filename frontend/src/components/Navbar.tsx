@@ -10,11 +10,11 @@ import { logout, reset } from '../features/auth/authSlice'
 import { ReactElement, FC } from 'react'
 
 
-
 const Navbar:FC = ():ReactElement => {
 
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
+  //I should have an interface for user or something, but that's backend
   const { user } = useAppSelector((state:any):any => state.auth)
 
   //Logout a user

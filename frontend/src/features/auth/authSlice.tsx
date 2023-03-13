@@ -1,19 +1,11 @@
-import { createSlice, createAsyncThunk, PayloadAction, AnyAction } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, AnyAction } from '@reduxjs/toolkit'
 import authService from './authService'
+import { AuthCounterState } from '../../app/interfaces'
 
 
 // Get user from localStorage
 // ! is a non-null assertion
 const user = JSON.parse(localStorage.getItem('user')!)
-
-
-interface AuthCounterState {
-    user:unknown,
-    isError: boolean,
-    isSuccess: boolean,
-    isLoading: boolean,
-    message: string
-}
 
 const initialState: AuthCounterState = {
     user: user ? user : null,

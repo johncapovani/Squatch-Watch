@@ -1,6 +1,6 @@
 import "./Spinner.css"
 
-const Spinner = ():any => {
+const Spinner = ():unknown => {
   return (
     <div className='loadingSpinnerContainer'>
       <div className='loadingSpinner'></div>

@@ -2,14 +2,7 @@ import { createSlice, createAsyncThunk, PayloadAction, ActionReducerMapBuilder, 
 import { AppThunk } from '../../app/store'
 //import { FC } from 'react';
 import sightingService from './sightingService'
-
-interface CounterState {
-  sightings: unknown[],
-  isError: boolean,
-  isSuccess: boolean,
-  isLoading: boolean,
-  message: string,
-}
+import { CounterState } from '../../app/interfaces'
 
 const initialState: CounterState = {
   sightings: [],

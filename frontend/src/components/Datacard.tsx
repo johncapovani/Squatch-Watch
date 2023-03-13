@@ -2,7 +2,7 @@
 import './Datacard.css'
 import { useState, FC, ReactElement } from 'react'
 
-const Datacard:FC<any> = ({ sighting }):ReactElement => {
+const Datacard:FC = ({ sighting }:any):ReactElement => {
 
     let [view, setView] = useState<boolean>(false)
 
