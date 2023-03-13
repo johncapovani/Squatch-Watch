@@ -1,6 +1,6 @@
 import "./Spinner.css"
 
-const Spinner = ():unknown => {
+const Spinner = ():JSX.Element => {
   return (
     <div className='loadingSpinnerContainer'>
       <div className='loadingSpinner'></div>

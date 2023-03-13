@@ -1,12 +1,13 @@
 import React, { ReactElement } from 'react'
 import { useEffect, FC } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { ActionFunction, useNavigate } from 'react-router-dom'
 import { useAppSelector, useAppDispatch} from '../app/hooks'
 import Spinner from '../components/Spinner'
 import { getMySightings, reset } from '../features/sightings/sightingSlice'
 //Import CSS
 import './UserProfile.css'
 import SightingItem from '../components/SightingItem'
+import { CounterState } from '../app/interfaces'
 
 const UserProfile: FC = ():ReactElement => {
 
@@ -15,7 +16,7 @@ const UserProfile: FC = ():ReactElement => {
   const dispatch = useAppDispatch()
 
   const { user } = useAppSelector((state:any):any => state.auth)
-  const { sightings, isLoading, isError, message } = useAppSelector((state:any):any => state.sightings)
+  const { sightings, isLoading, isError, message } = useAppSelector((state:any):CounterState => state.sightings)
 
   useEffect(():any => {
 
@@ -35,7 +36,7 @@ const UserProfile: FC = ():ReactElement => {
     dispatch(getMySightings())
 
     //Clear sighting when user leaves page
-    return ():any => {
+    return ():void => {
 
       dispatch(reset)
     }

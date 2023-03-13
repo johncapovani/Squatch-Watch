@@ -15,7 +15,7 @@ const initialState: CounterState = {
 //Get all sightings
 export const getSightings = createAsyncThunk(
   'sightings/getAll',
-  async (thunkAPI: any): Promise<unknown> => {
+  async (thunkAPI:any): Promise<unknown> => {
     try {
       return await sightingService.getSightings()
     } catch (error) {
@@ -25,7 +25,8 @@ export const getSightings = createAsyncThunk(
           error.response.data.message) ||
         error.message ||
         error.toString()
-      return thunkAPI.rejectWithValue(message)
+        return thunkAPI.rejectWithValue(message)
+    
     }
   }
 )
@@ -98,9 +99,9 @@ export const sightingsSlice = createSlice({
   name: 'sightings',
   initialState,
   reducers: {
-    reset: (initialState):CounterState => initialState,
+    reset: (initialState): CounterState => initialState,
   },
-  extraReducers: (builder:any): void => {
+  extraReducers: (builder: any): void => {
     builder
 
       .addCase(createSighting.pending, (state: CounterState): void => {
@@ -115,7 +116,7 @@ export const sightingsSlice = createSlice({
         state.isLoading = false
         state.isError = true
         state.message = action.payload
-        
+
       })
       //Get user specifc sightings for sightings dashboard
       .addCase(getMySightings.pending, (state: CounterState): void => {
@@ -154,7 +155,7 @@ export const sightingsSlice = createSlice({
         state.isSuccess = true
         state.sightings = state.sightings.filter(
           //can't figure out the type for this one. The ids are numbers, but it throws errors when I put number in
-          (sighting:any):any => sighting._id !== action.payload.id
+          (sighting: any): any => sighting._id !== action.payload.id
         )
       })
       .addCase(deleteSighting.rejected, (state: CounterState, action: AnyAction): void => {

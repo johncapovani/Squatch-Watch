@@ -9,17 +9,9 @@ import { createSighting, reset } from '../features/sightings/sightingSlice'
 
 import Spinner from '../components/Spinner'
 import { toast } from 'react-toastify'
+import { CounterState, FormState } from "../app/interfaces"
 
 const CreateUpdateSighting:FC = (): ReactElement => {
-
-  interface FormState {
-    date: string,
-    time: string,
-    location: string,
-    species: string,
-    images: string,
-    description: string,
-  }
 
   //Create the useState to collect form information when a sighting is being created
   const [formData, setFormData] = useState<FormState>({
@@ -37,7 +29,7 @@ const CreateUpdateSighting:FC = (): ReactElement => {
   const dispatch = useAppDispatch()
 
   const { sightings, isLoading, isError, isSuccess, message } = useAppSelector(
-    (state:any):any => state.sightings
+    (state:any):CounterState => state.sightings
   )
 
   useEffect((): void => {
@@ -55,8 +47,8 @@ const CreateUpdateSighting:FC = (): ReactElement => {
 
   //When the user types trigger the onchange
 
-  const onChange = (e: any): void => {
-    setFormData((prevState: any) => ({
+  const onChange = (e:any): void => {
+    setFormData((prevState: FormState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }))

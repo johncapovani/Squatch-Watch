@@ -15,7 +15,10 @@ const Home:FC = ():ReactElement => {
         if (isError) {
             console.log(message);
         }
-
+        //Giving this error and I don't know why. It has something to do with sightingSlice.
+        //(alias) getSightings(arg: any): AsyncThunkAction<unknown, any, AsyncThunkConfig>
+        //import getSightings
+        //Expected 1 arguments, but got 0.
         dispatch(getSightings())
 
         return () => {
@@ -34,7 +37,7 @@ const Home:FC = ():ReactElement => {
             <section className="content">
                 {sightings.length > 0 ? (
                     <div className="sightings">
-                        {sightings.map((sightings:any):any => (
+                        {sightings.map((sightings:any):unknown => (
                             <Datacard key={sightings._id} sighting={sightings} />
                         ))}
                     </div>

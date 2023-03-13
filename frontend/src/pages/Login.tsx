@@ -1,4 +1,4 @@
-import { useState, useEffect, FC, ReactElement } from 'react'
+import { useState, useEffect, FC, ReactElement, FormEvent } from 'react'
 import { FaSignInAlt } from 'react-icons/fa'
 import { useAppSelector, useAppDispatch} from '../app/hooks'
 import { useNavigate } from 'react-router-dom'
@@ -6,13 +6,10 @@ import { toast } from 'react-toastify'
 import { login, reset } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
 import "./Login.css"
+import { AuthCounterState, LoginState } from '../app/interfaces'
 
 const Login:FC = ():ReactElement => {
 
-  interface LoginState{
-    email:string,
-    password:string,
-  }
 
   const [formData, setFormData] = useState<LoginState>({
     email: '',
@@ -25,7 +22,7 @@ const Login:FC = ():ReactElement => {
   const dispatch = useAppDispatch()
 
   const { user, isLoading, isError, isSuccess, message } = useAppSelector(
-    (state:any):any => state.auth
+    (state:any): AuthCounterState => state.auth
   )
 
   useEffect(():void => {
@@ -47,7 +44,7 @@ const Login:FC = ():ReactElement => {
     }))
   }
 
-  const onSubmit = (e:any):void => {
+  const onSubmit = (e:FormEvent):void => {
     e.preventDefault()
 
     const userData = {
