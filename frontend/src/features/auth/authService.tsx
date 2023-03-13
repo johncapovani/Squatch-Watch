@@ -3,7 +3,7 @@ import axios from 'axios'
 const API_URL = '/api/users/'
 
 // Register user
-const register = async (userData:any):Promise<any> => {
+const register = async (userData:unknown):Promise<unknown> => {
     const response = await axios.post(API_URL, userData)
 
     if (response.data) {
@@ -14,7 +14,7 @@ const register = async (userData:any):Promise<any> => {
 }
 
 // Login user
-const login = async (userData:any):Promise<any> => {
+const login = async (userData:unknown):Promise<unknown> => {
     const response = await axios.post(API_URL + 'login', userData)
 
     if (response.data) {

@@ -1,5 +1,4 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
-import { AppThunk } from '../../app/store'
+import { createSlice, createAsyncThunk, PayloadAction, AnyAction } from '@reduxjs/toolkit'
 import authService from './authService'
 
 
@@ -27,10 +26,10 @@ const initialState: AuthCounterState = {
 // Register user
 export const register = createAsyncThunk(
     'auth/register',
-    async (user:any, thunkAPI:any):Promise<AppThunk> => {
+    async (user:unknown, thunkAPI:any):Promise<unknown> => {
         try {
             return await authService.register(user)
-        } catch (error:any) {
+        } catch (error) {
             const message =
                 (error.response &&
                     error.response.data &&
@@ -43,10 +42,10 @@ export const register = createAsyncThunk(
 )
 
 // Login user
-export const login = createAsyncThunk('auth/login', async (user:any, thunkAPI:any):Promise<any> => {
+export const login = createAsyncThunk('auth/login', async (user:unknown, thunkAPI:any):Promise<unknown> => {
     try {
         return await authService.login(user)
-    } catch (error:any) {
+    } catch (error ) {
         const message =
             (error.response && error.response.data && error.response.data.message) ||
             error.message ||
@@ -55,7 +54,7 @@ export const login = createAsyncThunk('auth/login', async (user:any, thunkAPI:an
     }
 })
 
-export const logout = createAsyncThunk('auth/logout', async ():Promise<any> => {
+export const logout = createAsyncThunk('auth/logout', async ():Promise<void> => {
     await authService.logout()
 })
 
@@ -72,35 +71,35 @@ export const authSlice = createSlice({
     },
     extraReducers: (builder:any):void => {
         builder
-            .addCase(register.pending, (state:any):void => {
+            .addCase(register.pending, (state:AuthCounterState):void => {
                 state.isLoading = true
             })
-            .addCase(register.fulfilled, (state:any, action:PayloadAction<boolean|unknown>):void => {
+            .addCase(register.fulfilled, (state:AuthCounterState, action:AnyAction):void => {
                 state.isLoading = false
                 state.isSuccess = true
                 state.user = action.payload
             })
-            .addCase(register.rejected, (state:any, action:PayloadAction<boolean|unknown>):void => {
+            .addCase(register.rejected, (state:AuthCounterState, action:AnyAction):void => {
                 state.isLoading = false
                 state.isError = true
                 state.message = action.payload
                 state.user = null
             })
-            .addCase(login.pending, (state:any):void => {
+            .addCase(login.pending, (state:AuthCounterState):void => {
                 state.isLoading = true
             })
-            .addCase(login.fulfilled, (state:any, action:PayloadAction<boolean|unknown>):void => {
+            .addCase(login.fulfilled, (state:AuthCounterState, action:AnyAction):void => {
                 state.isLoading = false
                 state.isSuccess = true
                 state.user = action.payload
             })
-            .addCase(login.rejected, (state:any, action:PayloadAction<boolean|unknown>):void => {
+            .addCase(login.rejected, (state:AuthCounterState, action:AnyAction):void => {
                 state.isLoading = false
                 state.isError = true
                 state.message = action.payload
                 state.user = null
             })
-            .addCase(logout.fulfilled, (state:any):void => {
+            .addCase(logout.fulfilled, (state:AuthCounterState):void => {
                 state.user = null
             })
     },

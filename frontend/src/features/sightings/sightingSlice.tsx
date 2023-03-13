@@ -105,7 +105,7 @@ export const sightingsSlice = createSlice({
   name: 'sightings',
   initialState,
   reducers: {
-    reset: (state):CounterState => initialState,
+    reset: (initialState):CounterState => initialState,
   },
   extraReducers: (builder:any): void => {
     builder
@@ -160,7 +160,8 @@ export const sightingsSlice = createSlice({
         state.isLoading = false
         state.isSuccess = true
         state.sightings = state.sightings.filter(
-          (sighting) => sighting._id !== action.payload.id
+          //can't figure out the type for this one. The ids are numbers, but it throws errors when I put number in
+          (sighting:any):any => sighting._id !== action.payload.id
         )
       })
       .addCase(deleteSighting.rejected, (state: CounterState, action: AnyAction): void => {
